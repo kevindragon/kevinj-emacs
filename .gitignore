@@ -1,0 +1,10 @@
+*.elc
+/.cache/
+/smex-items
+/places
+/projectile-bookmarks.eld
+/projectile.cache
+/recentf
+/transient/
+/auto-save-list/
+/.lsp-session-v1

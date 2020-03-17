@@ -1,0 +1,135 @@
+[submodule "extensions/smex"]
+	path = extensions/smex
+	url = https://github.com/nonsequitur/smex.git
+[submodule "extensions/benchmark-init-el"]
+	path = extensions/benchmark-init-el
+	url = https://github.com/dholm/benchmark-init-el.git
+[submodule "extensions/lsp-mode"]
+	path = extensions/lsp-mode
+	url = https://github.com/emacs-lsp/lsp-mode.git
+[submodule "extensions/lsp-ui"]
+	path = extensions/lsp-ui
+	url = https://github.com/emacs-lsp/lsp-ui.git
+[submodule "extensions/dash.el"]
+	path = extensions/dash.el
+	url = https://github.com/magnars/dash.el.git
+[submodule "extensions/f.el"]
+	path = extensions/f.el
+	url = https://github.com/rejeep/f.el.git
+[submodule "extensions/s.el"]
+	path = extensions/s.el
+	url = https://github.com/magnars/s.el.git
+[submodule "extensions/ht.el"]
+	path = extensions/ht.el
+	url = https://github.com/Wilfred/ht.el.git
+[submodule "extensions/hydra"]
+	path = extensions/hydra
+	url = https://github.com/abo-abo/hydra.git
+[submodule "extensions/markdown-mode"]
+	path = extensions/markdown-mode
+	url = https://github.com/defunkt/markdown-mode.git
+[submodule "extensions/spinner.el"]
+	path = extensions/spinner.el
+	url = https://github.com/Malabarba/spinner.el.git
+[submodule "extensions/lsp-python-ms"]
+	path = extensions/lsp-python-ms
+	url = git@github.com:kevindragon/lsp-python-ms.git
+[submodule "extensions/exec-path-from-shell"]
+	path = extensions/exec-path-from-shell
+	url = https://github.com/purcell/exec-path-from-shell.git
+[submodule "extensions/window-numbering.el"]
+	path = extensions/window-numbering.el
+	url = https://github.com/nschum/window-numbering.el.git
+[submodule "extensions/emacs-which-key"]
+	path = extensions/emacs-which-key
+	url = https://github.com/justbur/emacs-which-key.git
+[submodule "extensions/magit"]
+	path = extensions/magit
+	url = https://github.com/magit/magit.git
+[submodule "extensions/with-editor"]
+	path = extensions/with-editor
+	url = https://github.com/magit/with-editor.git
+[submodule "extensions/transient"]
+	path = extensions/transient
+	url = https://github.com/magit/transient.git
+[submodule "extensions/emacs-python-pytest"]
+	path = extensions/emacs-python-pytest
+	url = https://github.com/wbolster/emacs-python-pytest.git
+[submodule "extensions/emacs-ipython-notebook"]
+	path = extensions/emacs-ipython-notebook
+	url = https://github.com/millejoh/emacs-ipython-notebook.git
+[submodule "extensions/magit-popup"]
+	path = extensions/magit-popup
+	url = https://github.com/magit/magit-popup.git
+[submodule "extensions/projectile"]
+	path = extensions/projectile
+	url = https://github.com/bbatsov/projectile.git
+[submodule "extensions/company-mode"]
+	path = extensions/company-mode
+	url = https://github.com/company-mode/company-mode.git
+[submodule "extensions/company-quickhelp"]
+	path = extensions/company-quickhelp
+	url = https://github.com/company-mode/company-quickhelp.git
+[submodule "extensions/symbol-overlay"]
+	path = extensions/symbol-overlay
+	url = https://github.com/wolray/symbol-overlay.git
+[submodule "extensions/origami.el"]
+	path = extensions/origami.el
+	url = https://github.com/gregsexton/origami.el.git
+[submodule "extensions/lsp-origami"]
+	path = extensions/lsp-origami
+	url = https://github.com/emacs-lsp/lsp-origami.git
+[submodule "extensions/yasnippet"]
+	path = extensions/yasnippet
+	url = https://github.com/joaotavora/yasnippet.git
+[submodule "extensions/yasnippet-snippets"]
+	path = extensions/yasnippet-snippets
+	url = https://github.com/AndreaCrotti/yasnippet-snippets.git
+[submodule "extensions/ripgrep.el"]
+	path = extensions/ripgrep.el
+	url = https://github.com/nlamirault/ripgrep.el.git
+[submodule "extensions/rg.el"]
+	path = extensions/rg.el
+	url = https://github.com/dajva/rg.el.git
+[submodule "extensions/Emacs-wgrep"]
+	path = extensions/Emacs-wgrep
+	url = https://github.com/mhayashi1120/Emacs-wgrep.git
+[submodule "extensions/restclient.el"]
+	path = extensions/restclient.el
+	url = https://github.com/pashky/restclient.el.git
+[submodule "extensions/treemacs"]
+	path = extensions/treemacs
+	url = https://github.com/Alexander-Miller/treemacs.git
+[submodule "extensions/lsp-treemacs"]
+	path = extensions/lsp-treemacs
+	url = https://github.com/emacs-lsp/lsp-treemacs.git
+[submodule "extensions/ace-window"]
+	path = extensions/ace-window
+	url = https://github.com/abo-abo/ace-window.git
+[submodule "extensions/avy"]
+	path = extensions/avy
+	url = https://github.com/abo-abo/avy.git
+[submodule "extensions/pfuture"]
+	path = extensions/pfuture
+	url = https://github.com/Alexander-Miller/pfuture.git
+[submodule "extensions/yaml-mode"]
+	path = extensions/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode.git
+[submodule "extensions/xquery-mode"]
+	path = extensions/xquery-mode
+	url = https://github.com/xquery-mode/xquery-mode.git
+[submodule "extensions/web-mode"]
+	path = extensions/web-mode
+	url = https://github.com/fxbois/web-mode.git
+[submodule "extensions/json-mode"]
+	path = extensions/json-mode
+	url = https://github.com/joshwnj/json-mode.git
+[submodule "extensions/rust-mode"]
+	path = extensions/rust-mode
+	url = https://github.com/rust-lang/rust-mode.git
+[submodule "extensions/json-snatcher"]
+	path = extensions/json-snatcher
+	url = https://github.com/Sterlingg/json-snatcher.git
+[submodule "extensions/json-reformat"]
+	path = extensions/json-reformat
+	url = https://github.com/gongo/json-reformat.git
