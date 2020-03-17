@@ -133,3 +133,6 @@
 [submodule "extensions/json-reformat"]
 	path = extensions/json-reformat
 	url = https://github.com/gongo/json-reformat.git
+[submodule "extensions/swiper"]
+	path = extensions/swiper
+	url = https://github.com/abo-abo/swiper.git
