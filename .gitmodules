@@ -136,3 +136,6 @@
 [submodule "extensions/ht.el"]
 	path = extensions/ht.el
 	url = https://github.com/Wilfred/ht.el.git
+[submodule "extensions/polymode"]
+	path = extensions/polymode
+	url = https://github.com/polymode/polymode.git

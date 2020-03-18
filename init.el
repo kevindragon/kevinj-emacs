@@ -36,7 +36,7 @@
 
     (require 'init-startup)
     (require 'init-theme)
-
+    (require 'init-benchmark)
     (require 'init-basic-packages)
     (require 'init-hydra)
     (require 'init-markdown-mode)

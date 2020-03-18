@@ -56,14 +56,6 @@
 
 (setq-default kill-ring-max 200000)
 
-(add-to-list 'load-path (concat my-emacs-extension-dir "benchmark-init-el"))
-;; (require 'benchmark-init-modes)
-(require 'benchmark-init)
-;; (benchmark-init/activate)
-(add-hook 'after-init-hook 'benchmark-init/deactivate)
-
-;; 配置键绑定
-
 (defun newline-and-indent ()
   (interactive)
   (move-end-of-line 1)

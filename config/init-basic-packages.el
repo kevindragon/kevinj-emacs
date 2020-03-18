@@ -36,6 +36,7 @@
 (add-extension-dir "ace-window")
 (add-extension-dir "avy")
 (add-extension-dir "pfuture")
+(add-extension-dir "polymode")
 
 ;; 添加exec-path-from-shell
 (add-extension-dir "exec-path-from-shell")
