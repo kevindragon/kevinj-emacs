@@ -1,0 +1,5 @@
+#+TITLE: Emacs Config
+
+* Installation
+1. Download Emacs 27
+2. Clone this repo into ~/.config/emacs
