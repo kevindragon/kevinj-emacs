@@ -19,9 +19,6 @@
 [submodule "extensions/s.el"]
 	path = extensions/s.el
 	url = https://github.com/magnars/s.el.git
-[submodule "extensions/ht.el"]
-	path = extensions/ht.el
-	url = https://github.com/Wilfred/ht.el.git
 [submodule "extensions/hydra"]
 	path = extensions/hydra
 	url = https://github.com/abo-abo/hydra.git
@@ -136,3 +133,6 @@
 [submodule "extensions/swiper"]
 	path = extensions/swiper
 	url = https://github.com/abo-abo/swiper.git
+[submodule "extensions/ht.el"]
+	path = extensions/ht.el
+	url = https://github.com/Wilfred/ht.el.git
