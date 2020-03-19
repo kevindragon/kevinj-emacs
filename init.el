@@ -51,6 +51,7 @@
     (require 'init-yasnippet)
     (require 'init-auto-insert)
     (require 'init-rg)
+    (require 'init-flycheck)
 
     (require 'init-org)
 

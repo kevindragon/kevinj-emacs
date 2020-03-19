@@ -139,3 +139,12 @@
 [submodule "extensions/polymode"]
 	path = extensions/polymode
 	url = https://github.com/polymode/polymode.git
+[submodule "extensions/flycheck"]
+	path = extensions/flycheck
+	url = https://github.com/flycheck/flycheck.git
+[submodule "extensions/posframe"]
+	path = extensions/posframe
+	url = https://github.com/tumashu/posframe.git
+[submodule "extensions/flycheck-posframe"]
+	path = extensions/flycheck-posframe
+	url = https://github.com/alexmurray/flycheck-posframe.git
