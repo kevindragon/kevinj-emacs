@@ -52,7 +52,7 @@
 (line-number-mode 1)
 (column-number-mode 1)
 
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (setq-default kill-ring-max 200000)
 

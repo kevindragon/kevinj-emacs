@@ -65,9 +65,12 @@
     (require 'init-log-mode)
     (require 'init-web-mode)
     (require 'init-js)
+    (require 'init-java)
 
     (require 'init-treemacs)
 
-    (require 'kevinj)
     (require 'randomize-region)
+    
+    (require 'kevinj)
+    (require 'lexisnexis)
     ))

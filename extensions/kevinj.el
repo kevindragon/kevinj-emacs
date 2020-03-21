@@ -9,6 +9,7 @@
 ;;; Require
 
 (require 's)
+(require 'projectile)
 
 ;;; Code:
 
@@ -57,6 +58,7 @@
   (kill-new (buffer-name)))
 
 (defun kj/copy-project-file-name ()
+  "复制项目文件的相对根目录的路径"
   (interactive)
   (when buffer-file-name
     (kill-new

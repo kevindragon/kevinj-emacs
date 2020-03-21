@@ -37,6 +37,7 @@
 (add-extension-dir "avy")
 (add-extension-dir "pfuture")
 (add-extension-dir "polymode")
+(add-extension-dir "emacs-request")
 
 ;; 添加exec-path-from-shell
 (add-extension-dir "exec-path-from-shell")

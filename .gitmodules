@@ -148,3 +148,9 @@
 [submodule "extensions/flycheck-posframe"]
 	path = extensions/flycheck-posframe
 	url = https://github.com/alexmurray/flycheck-posframe.git
+[submodule "extensions/lsp-java"]
+	path = extensions/lsp-java
+	url = https://github.com/emacs-lsp/lsp-java.git
+[submodule "extensions/emacs-request"]
+	path = extensions/emacs-request
+	url = https://github.com/tkf/emacs-request.git

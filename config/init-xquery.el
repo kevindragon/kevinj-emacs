@@ -12,7 +12,9 @@
 
 ;;; Code:
 
-(setq xquery-mode-indent-style 'native)
+(setq indent-tabs-mode nil)
+(setq tab-width 4)
+(setq tab-stop-list (number-sequence 4 100 4))
 
 
 (provide 'init-xquery)
