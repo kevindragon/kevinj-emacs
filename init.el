@@ -66,11 +66,12 @@
     (require 'init-web-mode)
     (require 'init-js)
     (require 'init-java)
+    (require 'init-groovy)
 
     (require 'init-treemacs)
 
     (require 'randomize-region)
-    
+
     (require 'kevinj)
     (require 'lexisnexis)
     ))

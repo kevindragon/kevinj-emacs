@@ -154,3 +154,12 @@
 [submodule "extensions/emacs-request"]
 	path = extensions/emacs-request
 	url = https://github.com/tkf/emacs-request.git
+[submodule "extensions/emacs-gradle-mode"]
+	path = extensions/emacs-gradle-mode
+	url = https://github.com/jacobono/emacs-gradle-mode.git
+[submodule "extensions/dap-mode"]
+	path = extensions/dap-mode
+	url = https://github.com/emacs-lsp/dap-mode.git
+[submodule "extensions/groovy-emacs-modes"]
+	path = extensions/groovy-emacs-modes
+	url = https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes.git

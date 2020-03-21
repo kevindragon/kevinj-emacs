@@ -9,6 +9,8 @@
 (add-extension-dir "lsp-java")
 (require 'lsp-java)
 
+(require 'dap-java)
+
 ;;; Code:
 
 (add-hook 'java-mode-hook #'lsp)

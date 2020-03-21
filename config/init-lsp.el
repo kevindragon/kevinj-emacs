@@ -43,6 +43,7 @@
 
 (add-extension-dir "lsp-mode")
 (add-extension-dir "lsp-ui")
+(add-extension-dir "dap-mode")
 
 (require 'lsp-ui)
 (require 'lsp-mode)
