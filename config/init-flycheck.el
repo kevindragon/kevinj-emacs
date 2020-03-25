@@ -12,9 +12,9 @@
 
 ;;; Code:
 
-;; (with-eval-after-load 'flycheck
-;;   (require 'flycheck-posframe)
-;;   (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode))
+(with-eval-after-load 'flycheck
+  (require 'flycheck-posframe)
+  (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode))
 
 
 (provide 'init-flycheck)

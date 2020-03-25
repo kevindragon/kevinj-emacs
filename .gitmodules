@@ -142,12 +142,6 @@
 [submodule "extensions/flycheck"]
 	path = extensions/flycheck
 	url = https://github.com/flycheck/flycheck.git
-[submodule "extensions/posframe"]
-	path = extensions/posframe
-	url = https://github.com/tumashu/posframe.git
-[submodule "extensions/flycheck-posframe"]
-	path = extensions/flycheck-posframe
-	url = https://github.com/alexmurray/flycheck-posframe.git
 [submodule "extensions/lsp-java"]
 	path = extensions/lsp-java
 	url = https://github.com/emacs-lsp/lsp-java.git
@@ -166,3 +160,9 @@
 [submodule "extensions/cargo.el"]
 	path = extensions/cargo.el
 	url = https://github.com/kwrooijen/cargo.el.git
+[submodule "extensions/flycheck-posframe"]
+	path = extensions/flycheck-posframe
+	url = https://github.com/alexmurray/flycheck-posframe.git
+[submodule "extensions/posframe"]
+	path = extensions/posframe
+	url = https://github.com/tumashu/posframe.git

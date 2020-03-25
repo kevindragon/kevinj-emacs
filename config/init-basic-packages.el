@@ -39,6 +39,8 @@
 (add-extension-dir "polymode")
 (add-extension-dir "emacs-request")
 
+(add-extension-dir "posframe")
+
 ;; 添加exec-path-from-shell
 (add-extension-dir "exec-path-from-shell")
 (when (memq window-system '(mac ns x))

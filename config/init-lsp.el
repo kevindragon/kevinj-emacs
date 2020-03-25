@@ -50,20 +50,12 @@
 
 ;;; Code:
 
-(dolist (hook (list
-               ;; 'js-mode-hook
-               ;; 'ruby-mode-hook
-               'rust-mode-hook
-               ))
-  (add-hook hook '(lambda ()
-                    (lsp)
-                    )))
-
 (custom-set-variables
  ;; '(lsp-signature-render-documentation nil)
  ;; '(lsp-ui-doc-alignment 'frame)
  ;; '(lsp-ui-doc-delay 0.2)
- '(lsp-ui-doc-position 'at-point))
+ '(lsp-ui-doc-position 'at-point)
+ '(lsp-ui-sideline-show-diagnostics nil))
 
 
 (provide 'init-lsp)
