@@ -66,7 +66,7 @@
 (defun ln/xquery-update-from-server (file-path)
   "从服务器上下载相应的文件到对应的路径下."
   (interactive (list (read-string
-		      "update from server: "
+		      (format "%s\nupdate from server: " ln/xquery-endpoint)
 		      (ln/xquery--server-file-path))))
   (let ((uri (ln/xquery--server-uri file-path))
 	(start-time (float-time))
@@ -97,7 +97,7 @@
 (defun ln/xquery-push-to-server (file-path)
   "从服务器上下载相应的文件到对应的路径下."
   (interactive (list (read-string
-		      "push to server: "
+		      (format "%s\npush to server: " ln/xquery-endpoint)
 		      (ln/xquery--server-file-path))))
   (let ((uri (ln/xquery--server-uri file-path))
 	(start-time (float-time)))

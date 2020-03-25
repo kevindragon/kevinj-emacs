@@ -11,9 +11,9 @@
 
 ;;; Code:
 
-(global-set-key (kbd "M-i") 'symbol-overlay-put)
-(global-set-key (kbd "M-n") 'symbol-overlay-switch-forward)
-(global-set-key (kbd "M-p") 'symbol-overlay-switch-backward)
+(global-set-key (kbd "C-c M-i") 'symbol-overlay-put)
+(global-set-key (kbd "C-c M-n") 'symbol-overlay-switch-forward)
+(global-set-key (kbd "C-c M-p") 'symbol-overlay-switch-backward)
 
 
 (provide 'init-symbol-overlay)

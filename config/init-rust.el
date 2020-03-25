@@ -7,12 +7,18 @@
 
 ;;; Require
 (add-extension-dir "rust-mode")
-(autoload 'rust-mode "rust-mode" nil t)
+(add-extension-dir "cargo.el")
+(require 'rust-mode)
+(require 'cargo)
+(require 'lsp-mode)
 
 ;;; Code:
 
 (add-hook 'rust-mode-hook
-          (lambda () (setq indent-tabs-mode nil)))
+          (lambda ()
+	    (cargo-minor-mode 1)
+	    (setq indent-tabs-mode nil)
+	    (lsp-deferred)))
 (setq rust-format-on-save t)
 
 

@@ -13,6 +13,11 @@
 
 (require 'magit)
 
+;;; Code:
+
+(global-set-key (kbd "M-n g") 'magit-status)
+
+
 (provide 'init-magit)
 
 ;;; init-magit.el ends here

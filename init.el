@@ -67,6 +67,7 @@
     (require 'init-js)
     (require 'init-java)
     (require 'init-groovy)
+    (require 'init-rust)
 
     (require 'init-treemacs)
 

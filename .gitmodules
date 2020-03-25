@@ -163,3 +163,6 @@
 [submodule "extensions/groovy-emacs-modes"]
 	path = extensions/groovy-emacs-modes
 	url = https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes.git
+[submodule "extensions/cargo.el"]
+	path = extensions/cargo.el
+	url = https://github.com/kwrooijen/cargo.el.git
