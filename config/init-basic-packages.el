@@ -21,6 +21,8 @@
 (add-extension-dir "ht.el")
 (require 'ht)
 
+(add-extension-dir "emacs-deferred")
+
 (add-extension-dir "transient/lisp")
 
 ;; window-numbering
@@ -40,12 +42,17 @@
 (add-extension-dir "emacs-request")
 
 (add-extension-dir "posframe")
+(with-eval-after-load 'posframe
+  (setq posframe-mouse-banish nil))
+
+(add-extension-dir "bui.el")
 
 ;; 添加exec-path-from-shell
 (add-extension-dir "exec-path-from-shell")
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
+
 (provide 'init-basic-packages)
 
 ;;; init-basic-packages.el ends here

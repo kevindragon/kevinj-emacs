@@ -18,27 +18,6 @@
 ;; (require 'init-lsp)
 ;;
 
-;;; Customize:
-;;
-;;
-;;
-;; All of the above can customize by:
-;;      M-x customize-group RET init-lsp RET
-;;
-
-;;; Change log:
-;;
-
-;;; Acknowledgements:
-;;
-;;
-;;
-
-;;; TODO
-;;
-;;
-;;
-
 ;;; Require
 
 (add-extension-dir "lsp-mode")
@@ -53,9 +32,12 @@
 (custom-set-variables
  ;; '(lsp-signature-render-documentation nil)
  ;; '(lsp-ui-doc-alignment 'frame)
- ;; '(lsp-ui-doc-delay 0.2)
- '(lsp-ui-doc-position 'at-point)
- '(lsp-ui-sideline-show-diagnostics nil))
+ ;; '(lsp-ui-doc-position 'at-point)
+ '(lsp-ui-doc-include-signature t)
+ '(lsp-ui-sideline-show-diagnostics nil)
+ '(lsp-enable-file-watchers t)
+ '(lsp-file-watch-threshold 200)
+ )
 
 
 (provide 'init-lsp)

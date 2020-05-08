@@ -13,7 +13,11 @@
 
 ;;; Code:
 
-(add-hook 'java-mode-hook #'lsp)
+(add-hook 'java-mode-hook
+		  (lambda ()
+			(lsp)
+			(symbol-overlay-mode 1)
+			(setq-default tab-width 4)))
 
 
 (provide 'init-java)

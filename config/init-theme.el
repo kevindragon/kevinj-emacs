@@ -6,7 +6,7 @@
 ;; Copyright (C) 2020, Kevin Jiang, all rights reserved.
 
 ;;; Require
-
+(add-theme-dir "dracula")
 
 ;;; Code:
 
@@ -23,7 +23,8 @@
   (mapcar #'disable-theme custom-enabled-themes)
   (custom-default-theme))
 
-(custom-default-theme)
+;; (custom-default-theme)
+(load-theme 'dracula t)
 
 
 (provide 'init-theme)

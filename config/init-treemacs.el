@@ -15,7 +15,7 @@
 
 ;;; Code:
 
-;; (setq treemacs-silent-refresh t)
+(setq treemacs-silent-refresh t)
 
 
 (provide 'init-treemacs)

@@ -19,6 +19,10 @@
 	    (cargo-minor-mode 1)
 	    (setq indent-tabs-mode nil)
 	    (lsp-deferred)))
+(add-hook 'cargo-process-mode-hook
+					(lambda ()
+						(setq truncate-partial-width-windows nil)
+						(toggle-truncate-lines 1)))
 (setq rust-format-on-save t)
 
 

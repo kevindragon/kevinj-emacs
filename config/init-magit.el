@@ -16,6 +16,8 @@
 ;;; Code:
 
 (global-set-key (kbd "M-n g") 'magit-status)
+(modify-coding-system-alist 'file "\\.git/COMMIT_EDITMSG\\'" 'utf-8)
+(modify-coding-system-alist 'file "COMMIT_EDITMSG\\'" 'utf-8)
 
 
 (provide 'init-magit)

@@ -30,7 +30,7 @@
 	url = https://github.com/Malabarba/spinner.el.git
 [submodule "extensions/lsp-python-ms"]
 	path = extensions/lsp-python-ms
-	url = git@github.com:kevindragon/lsp-python-ms.git
+	url = https://github.com/kevindragon/lsp-python-ms.git
 [submodule "extensions/exec-path-from-shell"]
 	path = extensions/exec-path-from-shell
 	url = https://github.com/purcell/exec-path-from-shell.git
@@ -166,3 +166,12 @@
 [submodule "extensions/posframe"]
 	path = extensions/posframe
 	url = https://github.com/tumashu/posframe.git
+[submodule "extensions/php-mode"]
+	path = extensions/php-mode
+	url = https://github.com/emacs-php/php-mode.git
+[submodule "extensions/bui.el"]
+	path = extensions/bui.el
+	url = https://github.com/alezost/bui.el.git
+[submodule "extensions/emacs-deferred"]
+	path = extensions/emacs-deferred
+	url = https://github.com/kiwanami/emacs-deferred.git

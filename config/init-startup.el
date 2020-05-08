@@ -19,6 +19,19 @@
 (prefer-coding-system 'utf-8-dos)
 (prefer-coding-system 'utf-8-unix)
 
+;; (when (eq system-type 'windows-nt)
+;;   ;; disable CJK coding/encoding (Chinese/Japanese/Korean characters)
+;;   (setq utf-translate-cjk-mode nil)
+;;   (set-language-environment 'utf-8)
+;;   (setq locale-coding-system 'utf-8)
+;;   (set-default-coding-systems 'utf-8)
+;;   (set-terminal-coding-system 'utf-8)
+;;   (set-selection-coding-system 'utf-16-le)
+;;   (prefer-coding-system 'utf-8)
+;;   )
+
+(setenv "LANG" "zh_CN.UTF-8")
+
 ;;; set location on frame title
 (defun frame-title-string ()
   "Return the file name of current buffer, using ~ if under home directory"
@@ -54,7 +67,7 @@
 
 (defalias 'list-buffers 'ibuffer)
 
-;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (setq-default kill-ring-max 200000)
 

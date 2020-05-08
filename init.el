@@ -18,9 +18,13 @@
 
 (defvar my-emacs-config-dir (concat user-emacs-directory "/config/"))
 (defvar my-emacs-extension-dir (concat user-emacs-directory "/extensions/"))
+(defvar my-emacs-theme-dir (concat user-emacs-directory "/themes/"))
 
 (defun add-extension-dir (dir)
   (add-to-list 'load-path (concat my-emacs-extension-dir dir)))
+
+(defun add-theme-dir (dir)
+	(add-to-list 'custom-theme-load-path (concat my-emacs-theme-dir dir)))
 
 (add-to-list 'load-path my-emacs-config-dir)
 (add-to-list 'load-path my-emacs-extension-dir)
@@ -36,8 +40,11 @@
 
     (require 'init-startup)
     (require 'init-theme)
-    (require 'init-benchmark)
     (require 'init-basic-packages)
+    ;; (dolist (dir (f-directories my-emacs-extension-dir))
+    ;;   (add-to-list 'load-path dir))
+
+    (require 'init-benchmark)
     (require 'init-hydra)
     (require 'init-markdown-mode)
     (require 'init-spinner)
@@ -57,6 +64,7 @@
 
     (require 'init-magit)
 
+    (require 'init-xml)
     (require 'init-lsp)
     (require 'init-python)
     (require 'init-restclient)
@@ -68,6 +76,8 @@
     (require 'init-java)
     (require 'init-groovy)
     (require 'init-rust)
+		(require 'init-php)
+		(require 'init-sql)
 
     (require 'init-treemacs)
 
@@ -76,3 +86,5 @@
     (require 'kevinj)
     (require 'lexisnexis)
     ))
+(put 'erase-buffer 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
