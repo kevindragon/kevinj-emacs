@@ -30,7 +30,8 @@
 ;;   (prefer-coding-system 'utf-8)
 ;;   )
 
-(setenv "LANG" "zh_CN.UTF-8")
+;; (setenv "LANG" "zh_CN.UTF-8")
+(setenv "LANG" "en_US.UTF-8")
 
 ;;; set location on frame title
 (defun frame-title-string ()

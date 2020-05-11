@@ -52,6 +52,9 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
+;; websocket算是基础包进行加载
+(add-extension-dir "emacs-websocket")
+
 
 (provide 'init-basic-packages)
 

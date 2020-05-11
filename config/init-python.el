@@ -22,9 +22,6 @@
 (add-extension-dir "emacs-python-pytest")
 (require 'python-pytest)
 
-(add-extension-dir "emacs-ipython-notebook/lisp")
-(require 'ein)
-
 (add-extension-dir "blacken")
 (require 'blacken)
 
