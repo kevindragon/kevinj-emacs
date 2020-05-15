@@ -19,6 +19,7 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.vue$" . web-mode))
 
 ;; (setq web-mode-markup-indent-offset 2)
 ;; (setq web-mode-css-indent-offset 2)
@@ -26,6 +27,8 @@
 ;; (setq web-mode-enable-current-column-highlight t)
 (setq web-mode-script-padding 0
       web-mode-style-padding 0)
+
+(add-hook 'web-mode-hook #'lsp)
 
 
 (provide 'init-web-mode)

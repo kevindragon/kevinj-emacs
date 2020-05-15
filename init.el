@@ -41,6 +41,7 @@
     (require 'init-startup)
     (require 'init-theme)
     (require 'init-basic-packages)
+    ;; (require 'init-window)
     ;; (dolist (dir (f-directories my-emacs-extension-dir))
     ;;   (add-to-list 'load-path dir))
 
@@ -76,9 +77,10 @@
     (require 'init-java)
     (require 'init-groovy)
     (require 'init-rust)
-		(require 'init-php)
-		(require 'init-sql)
-		(require 'init-clojure)
+    (require 'init-php)
+    (require 'init-sql)
+    (require 'init-clojure)
+    (require 'init-ruby)
 
     (require 'init-treemacs)
 

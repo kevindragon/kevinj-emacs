@@ -11,7 +11,7 @@
 (add-extension-dir "magit/lisp")
 (add-extension-dir "magit-popup")
 
-(require 'magit)
+(require 'init-magit-autoloads)
 
 ;;; Code:
 
