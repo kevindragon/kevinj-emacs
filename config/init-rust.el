@@ -13,6 +13,16 @@
 (require 'lsp-mode)
 
 ;;; Code:
+(defun kj/rust-actix-run-dev (port)
+	"在指定端口运行开发服务器"
+	(interactive (list (read-number "port:" 3000)))
+	(let ((buffer (get-buffer-create "*actix dev server*")))
+		(start-process "actix dev server" buffer
+									 "systemfd"
+									 "--no-pid" "-s"
+									 (format "http::%d" port)
+									 "--" "cargo" "watch" "-x" "run")
+		(switch-to-buffer buffer)))
 
 (add-hook 'rust-mode-hook
           (lambda ()

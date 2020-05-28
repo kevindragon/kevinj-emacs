@@ -15,7 +15,7 @@
 (add-extension-dir "sesman")
 
 (add-extension-dir "cider")
-(require 'cider)
+(load "init-cider-autoloads" t t)
 
 ;;; Code:
 

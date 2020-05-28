@@ -18,6 +18,14 @@
 (setq org-agenda-include-diary t)       ;集成日历
 (setq org-startup-truncated t)          ;默认换行
 
+(defun kj/org-mode-hook ()
+  (setq org-html-table-default-attributes
+	(plist-put org-html-table-default-attributes :rules "all"))
+  (setq org-html-table-default-attributes
+	(plist-put org-html-table-default-attributes :frame "border")))
+
+(add-hook 'org-mode-hook #'kj/org-mode-hook)
+
 (provide 'init-org)
 
 ;;; init-org.el ends here

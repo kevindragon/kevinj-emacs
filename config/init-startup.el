@@ -65,6 +65,7 @@
 ;; 在mode line显示行和列
 (line-number-mode 1)
 (column-number-mode 1)
+(global-hl-line-mode +1)
 
 (defalias 'list-buffers 'ibuffer)
 

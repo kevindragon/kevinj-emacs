@@ -12,21 +12,22 @@
 
 ;;; Code:
 
-(defun autoinsert-yas-expand()
+(defun kj/autoinsert-yas-expand()
   "Replace text in yasnippet template."
   (yas-expand-snippet (buffer-string) (point-min) (point-max)))
 
 (eval-after-load 'autoinsert
-  (lambda ()    
+  (lambda ()
     ;; Don't want to be prompted before insertion:
     (setq auto-insert-query nil)
     (setq auto-insert-directory (locate-user-emacs-file "templates"))
     (add-hook 'find-file-hook 'auto-insert)
     (auto-insert-mode 1)
     (yas-minor-mode-on)
-    :config
-    (define-auto-insert "\\.php$" ["template.php" autoinsert-yas-expand])
-    (define-auto-insert "\\.py$" ["template.py" autoinsert-yas-expand])))
+    ;; :config
+    (define-auto-insert "\\.php$" ["template.php" kj/autoinsert-yas-expand])
+    (define-auto-insert "\\.py$" ["template.py" kj/autoinsert-yas-expand])
+		(define-auto-insert "\\.vue$" ["template.vue" kj/autoinsert-yas-expand])))
 
 
 (provide 'init-auto-insert)

@@ -16,6 +16,8 @@
 ;;; Code:
 
 (setq treemacs-silent-refresh t)
+;; 会影响lsp的启动
+;; (lsp-treemacs-sync-mode 1)
 
 
 (provide 'init-treemacs)

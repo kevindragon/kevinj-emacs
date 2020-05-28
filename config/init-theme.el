@@ -23,8 +23,7 @@
   (mapcar #'disable-theme custom-enabled-themes)
   (custom-default-theme))
 
-;; (custom-default-theme)
-(load-theme 'dracula t)
+;; (load-theme 'dracula t)
 
 
 (provide 'init-theme)

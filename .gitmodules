@@ -202,3 +202,9 @@
 [submodule "extensions/auto-complete"]
 	path = extensions/auto-complete
 	url = https://github.com/auto-complete/auto-complete.git
+[submodule "themes/typescript.el"]
+	path = themes/typescript.el
+	url = https://github.com/emacs-typescript/typescript.el.git
+[submodule "extensions/typescript.el"]
+	path = extensions/typescript.el
+	url = https://github.com/emacs-typescript/typescript.el.git
