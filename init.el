@@ -42,6 +42,7 @@
     (require 'init-startup)
     (require 'init-theme)
     (require 'init-basic-packages)
+		(require 'init-icons)
     ;; (require 'init-window)
     ;; (dolist (dir (f-directories my-emacs-extension-dir))
     ;;   (add-to-list 'load-path dir))
@@ -88,6 +89,8 @@
 
     (require 'kevinj)
     (require 'lexisnexis)
+
+		(require 'init-dashboard)
     ))
 (put 'erase-buffer 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
