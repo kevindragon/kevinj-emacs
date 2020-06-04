@@ -30,7 +30,7 @@
 	url = https://github.com/Malabarba/spinner.el.git
 [submodule "extensions/lsp-python-ms"]
 	path = extensions/lsp-python-ms
-	url = https://github.com/kevindragon/lsp-python-ms.git
+	url = https://github.com/emacs-lsp/lsp-python-ms.git
 [submodule "extensions/exec-path-from-shell"]
 	path = extensions/exec-path-from-shell
 	url = https://github.com/purcell/exec-path-from-shell.git
