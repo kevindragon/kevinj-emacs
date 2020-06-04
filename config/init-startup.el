@@ -67,6 +67,8 @@
 (column-number-mode 1)
 (global-hl-line-mode +1)
 
+(recentf-mode 1)
+
 (defalias 'list-buffers 'ibuffer)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
