@@ -471,7 +471,7 @@ Then show the status buffer for the new repository.
 
 \(fn REPOSITORY DIRECTORY ARGS)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-clone" '("magit-clone")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-clone" '("magit-clone-")))
 
 ;;;***
 
@@ -568,8 +568,9 @@ history element.
 
 \(fn DATE)" t nil)
  (autoload 'magit-commit-absorb "magit-commit" nil t)
+ (autoload 'magit-commit-autofixup "magit-commit" nil t)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-commit" '("magit")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-commit" '("magit-")))
 
 ;;;***
 
@@ -652,7 +653,7 @@ for a revision.
 
 \(fn REV &optional ARGS FILES MODULE)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-diff" '("magit")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-diff" '("magit-")))
 
 ;;;***
 
@@ -741,7 +742,7 @@ stash that were staged.
 
 \(fn STASH)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-ediff" '("magit-ediff")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-ediff" '("magit-ediff-")))
 
 ;;;***
 
@@ -1360,7 +1361,7 @@ Show commits in a branch that are not merged in the upstream branch.
 
 \(fn HEAD UPSTREAM)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-log" '("magit")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-log" '("magit-")))
 
 ;;;***
 
@@ -1466,7 +1467,7 @@ Abort the current merge operation.
 ;;; Generated autoloads from ../extensions/magit/lisp/magit-notes.el
  (autoload 'magit-notes "magit" nil t)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-notes" '("magit-")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-notes" '("magit-notes-")))
 
 ;;;***
 
@@ -1544,7 +1545,7 @@ Pull from a branch read in the minibuffer.
 
 \(fn SOURCE ARGS)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-pull" '("magit-pull")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-pull" '("magit-pull-")))
 
 ;;;***
 
@@ -1781,6 +1782,13 @@ Reset the `HEAD', index, and working tree to COMMIT.
 
 \(fn COMMIT)" t nil)
 
+(autoload 'magit-reset-keep "../extensions/magit/lisp/magit-reset" "\
+Reset the `HEAD' and index to COMMIT, while keeping uncommitted changes.
+
+\(git reset --keep REVISION)
+
+\(fn COMMIT)" t nil)
+
 (autoload 'magit-reset-index "../extensions/magit/lisp/magit-reset" "\
 Reset the index to COMMIT.
 Keep the `HEAD' and working tree as-is, so if COMMIT refers to the
@@ -1804,7 +1812,7 @@ With a prefix argument reset the working tree otherwise don't.
 
 \(fn COMMIT &optional HARD)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-reset" '("magit-reset")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-reset" '("magit-reset-")))
 
 ;;;***
 
@@ -2175,7 +2183,7 @@ Like `magit-status' but with non-nil `magit-status-goto-file-position'." t nil)
 Unregister MODULES and remove their working directories.
 
 For safety reasons, do not remove the gitdirs and if a module has
-uncomitted changes, then do not remove it at all.  If a module's
+uncommitted changes, then do not remove it at all.  If a module's
 gitdir is located inside the working directory, then move it into
 the gitdir of the superproject first.
 

@@ -24,7 +24,6 @@
     (add-hook 'find-file-hook 'auto-insert)
     (auto-insert-mode 1)
     (yas-minor-mode-on)
-    ;; :config
     (define-auto-insert "\\.php$" ["template.php" kj/autoinsert-yas-expand])
     (define-auto-insert "\\.py$" ["template.py" kj/autoinsert-yas-expand])
 		(define-auto-insert "\\.vue$" ["template.vue" kj/autoinsert-yas-expand])))

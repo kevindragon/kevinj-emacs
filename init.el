@@ -24,7 +24,8 @@
   (add-to-list 'load-path (concat my-emacs-extension-dir dir)))
 
 (defun add-theme-dir (dir)
-	(add-to-list 'custom-theme-load-path (concat my-emacs-theme-dir dir)))
+	(add-to-list 'custom-theme-load-path (concat my-emacs-theme-dir dir))
+	(add-to-list 'load-path (concat my-emacs-theme-dir dir)))
 
 (add-to-list 'load-path my-emacs-config-dir)
 (add-to-list 'load-path my-emacs-extension-dir)

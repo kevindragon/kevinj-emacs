@@ -22,7 +22,8 @@
   (setq org-html-table-default-attributes
 	(plist-put org-html-table-default-attributes :rules "all"))
   (setq org-html-table-default-attributes
-	(plist-put org-html-table-default-attributes :frame "border")))
+		(plist-put org-html-table-default-attributes :frame "border"))
+  (global-set-key (kbd "C-c a") 'org-agenda))
 
 (add-hook 'org-mode-hook #'kj/org-mode-hook)
 
