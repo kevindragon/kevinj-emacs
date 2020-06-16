@@ -91,6 +91,7 @@
     (require 'lexisnexis)
 
 		(require 'init-dashboard)
+		(require 'init-hugo)
     ))
 (put 'erase-buffer 'disabled nil)
 (put 'narrow-to-region 'disabled nil)

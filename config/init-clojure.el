@@ -18,6 +18,11 @@
 (load "init-cider-autoloads" t t)
 
 ;;; Code:
+(defun kj/clojure-hook ()
+  ;; 启动symbol-overlay-mode
+  (when (boundp symbol-overlay-mode) (symbol-overlay-mode)))
+
+(add-hook 'clojure-mode-hook #'kj/clojure-hook)
 
 
 (provide 'init-clojure)

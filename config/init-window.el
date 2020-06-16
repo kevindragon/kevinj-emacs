@@ -8,9 +8,9 @@
 ;;; Require
 
 ;;; Code:
-;; (defvar parameters
-;;   '(window-parameters . ((no-other-window . t)
-;;                          (no-delete-other-windows . t))))
+(defvar kj/window-parameters
+  '(window-parameters . ((no-other-window . t)
+                         (no-delete-other-windows . t))))
 
 ;; (setq fit-window-to-buffer-horizontally t)
 ;; (setq window-resize-pixelwise t)
@@ -43,6 +43,13 @@
 ;;    ("\\*\\(?:help\\|grep\\|Completions\\)\\*"
 ;;     display-buffer-in-side-window
 ;;     (side . bottom) (slot . 1) (preserve-size . (nil . t)) ,parameters)))
+
+(setq
+ display-buffer-alist
+ `(("\\*flask server\\*" display-buffer-in-side-window
+		(side . bottom) (slot . -1) (preserve-size . (nil nil)) ,kj/window-parameters)
+	 ("\\*vue server\\*" display-buffer-in-side-window
+		(side . bottom) (slot . 1) (preserve-size . (nil nil)) ,kj/window-parameters)))
 
 
 (provide 'init-window)

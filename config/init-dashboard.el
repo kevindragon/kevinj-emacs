@@ -13,9 +13,9 @@
 ;;; Code:
 (dashboard-setup-startup-hook)
 (setq dashboard-items '((agenda . 5)
-                        (recents  . 5)
                         ;; (bookmarks . 5)
                         (projects . 5)
+                        (recents  . 20)
                         ;; (registers . 5)
 												))
 

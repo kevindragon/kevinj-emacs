@@ -16,6 +16,13 @@
 ;; (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
+;; (custom-set-variables
+;;  ;; 忽略更多的目录
+;;  '(projectile-globally-ignored-directories
+;; 	 (append projectile-globally-ignored-directories
+;; 					 '("node_modules" ".vscode" ".git" ".pytest_cache"
+;; 						 ".log" "logs"))))
+
 
 (provide 'init-projectile)
 
