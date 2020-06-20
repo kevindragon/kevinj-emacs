@@ -12,12 +12,12 @@
 
 ;;; Code:
 (dashboard-setup-startup-hook)
-(setq dashboard-items '((agenda . 5)
+(setq dashboard-items '((agenda . 10)
                         ;; (bookmarks . 5)
-                        (projects . 5)
+                        (projects . 10)
                         (recents  . 20)
                         ;; (registers . 5)
-												))
+                        ))
 
 
 (provide 'init-dashboard)

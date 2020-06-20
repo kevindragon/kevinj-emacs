@@ -10,7 +10,8 @@
 (require 'easy-hugo)
 
 ;;; Code:
-(setq easy-hugo-basedir "c:/workspace/hugo-blog")
+(setq easy-hugo-basedir "c:/workspace/hugo-blog"
+			easy-hugo-server-flags "--buildDrafts")
 
 
 (provide 'init-hugo)

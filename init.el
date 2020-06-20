@@ -24,8 +24,8 @@
   (add-to-list 'load-path (concat my-emacs-extension-dir dir)))
 
 (defun add-theme-dir (dir)
-	(add-to-list 'custom-theme-load-path (concat my-emacs-theme-dir dir))
-	(add-to-list 'load-path (concat my-emacs-theme-dir dir)))
+  (add-to-list 'custom-theme-load-path (concat my-emacs-theme-dir dir))
+  (add-to-list 'load-path (concat my-emacs-theme-dir dir)))
 
 (add-to-list 'load-path my-emacs-config-dir)
 (add-to-list 'load-path my-emacs-extension-dir)
@@ -42,7 +42,7 @@
     (require 'init-startup)
     (require 'init-theme)
     (require 'init-basic-packages)
-		(require 'init-icons)
+    (require 'init-icons)
     ;; (require 'init-window)
     ;; (dolist (dir (f-directories my-emacs-extension-dir))
     ;;   (add-to-list 'load-path dir))
@@ -90,8 +90,8 @@
     (require 'kevinj)
     (require 'lexisnexis)
 
-		(require 'init-dashboard)
-		(require 'init-hugo)
+    (require 'init-dashboard)
+    (require 'init-hugo)
     ))
 (put 'erase-buffer 'disabled nil)
 (put 'narrow-to-region 'disabled nil)

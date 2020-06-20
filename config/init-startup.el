@@ -69,21 +69,23 @@
 
 (recentf-mode 1)
 
+(setq-default indent-tabs-mode nil)
+
 (defalias 'list-buffers 'ibuffer)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (setq-default kill-ring-max 200000)
 
-(defun newline-and-indent ()
+(defun kj/newline-and-indent ()
   (interactive)
   (move-end-of-line 1)
   (newline)
   (indent-for-tab-command))
-(global-set-key (kbd "C-S-o") 'newline-and-indent)
+(global-set-key (kbd "C-S-o") 'kj/newline-and-indent)
 
 ;; window split horizontal and vertical toggle
-(defun toggle-window-split ()
+(defun kj/toggle-window-split ()
   (interactive)
   (if (= (count-windows) 2)
       (let* ((this-win-buffer (window-buffer))
@@ -107,7 +109,7 @@
       (set-window-buffer (next-window) next-win-buffer)
       (select-window first-win)
       (if this-win-2nd (other-window 1))))))
-(global-set-key (kbd "C-x |") 'toggle-window-split)
+(global-set-key (kbd "C-x |") 'kj/toggle-window-split)
 
 ;; maximum frame
 (global-set-key (kbd "C-x w m") 'toggle-frame-maximized)
