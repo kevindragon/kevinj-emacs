@@ -220,3 +220,15 @@
 [submodule "extensions/emacs-memoize"]
 	path = extensions/emacs-memoize
 	url = https://github.com/skeeto/emacs-memoize.git
+[submodule "extensions/org-pomodoro"]
+	path = extensions/org-pomodoro
+	url = https://github.com/marcinkoziej/org-pomodoro.git
+[submodule "extensions/sound-wav"]
+	path = extensions/sound-wav
+	url = https://github.com/emacsorphanage/sound-wav.git
+[submodule "extensions/powershell.el"]
+	path = extensions/powershell.el
+	url = https://github.com/jschaf/powershell.el.git
+[submodule "extensions/diminish.el"]
+	path = extensions/diminish.el
+	url = https://github.com/myrjola/diminish.el.git

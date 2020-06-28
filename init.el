@@ -20,6 +20,8 @@
 (defvar my-emacs-extension-dir (concat user-emacs-directory "/extensions/"))
 (defvar my-emacs-theme-dir (concat user-emacs-directory "/themes/"))
 
+(defvar my-workspace-dir "C:/workspace")
+
 (defun add-extension-dir (dir)
   (add-to-list 'load-path (concat my-emacs-extension-dir dir)))
 
@@ -92,6 +94,8 @@
 
     (require 'init-dashboard)
     (require 'init-hugo)
+
+    (require 'init-model-line)
     ))
 (put 'erase-buffer 'disabled nil)
 (put 'narrow-to-region 'disabled nil)

@@ -5,11 +5,18 @@
 ;; Maintainer: Kevin Jiang <wenlin1988@126.com>
 ;; Copyright (C) 2020, Kevin Jiang, all rights reserved.
 
+;;; Require
 (require 'org)
-(when (string-equal system-type "windows-nt")
-  (setq org-directory "c:/workspace/orgs")
-  (setq org-agenda-files '("c:/workspace/orgs/todo.org"))
-  (setq org-default-notes-file (concat org-directory "/notes.org")))
+;; (add-extension-dir "alert")
+(add-extension-dir "powershell.el")
+(add-extension-dir "sound-wav")
+(add-extension-dir "org-pomodoro")
+(require 'org-pomodoro)
+
+;;; Code:
+(setq org-directory (concat my-workspace-dir "/orgs"))
+(setq org-agenda-files (list (concat my-workspace-dir "/orgs/todo.org")))
+(setq org-default-notes-file (concat org-directory "/notes.org"))
 (setq org-hide-leading-stars t)         ;使星号不可见
 (setq org-enable-table-editor 1)        ;启用内建的电子表格
 (setq org-log-done t)                   ;日志记录
@@ -28,6 +35,7 @@
 
 (add-hook 'org-mode-hook #'kj/org-mode-hook)
 
+
 (provide 'init-org)
 
 ;;; init-org.el ends here
