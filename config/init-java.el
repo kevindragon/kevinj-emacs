@@ -9,15 +9,16 @@
 (add-extension-dir "lsp-java")
 (require 'lsp-java)
 
-(require 'dap-java)
+;; (require 'dap-java)
 
 ;;; Code:
+(defun kj/java-mode-hook ()
+  (setq mode-name "Ⓙ")
+  (lsp)
+  (symbol-overlay-mode 1)
+  (setq-default tab-width 4))
 
-(add-hook 'java-mode-hook
-		  (lambda ()
-			(lsp)
-			(symbol-overlay-mode 1)
-			(setq-default tab-width 4)))
+(add-hook 'java-mode-hook #'kj/java-mode-hook)
 
 
 (provide 'init-java)

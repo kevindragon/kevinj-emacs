@@ -24,8 +24,9 @@
 (add-extension-dir "lsp-ui")
 (add-extension-dir "dap-mode")
 
+(require 'init-lsp-autoloads)
+(require 'init-dap-autoloads)
 (require 'lsp-ui)
-(require 'lsp-mode)
 
 ;;; Code:
 
@@ -35,8 +36,8 @@
  ;; '(lsp-ui-doc-position 'at-point)
  '(lsp-ui-doc-include-signature t)
  '(lsp-ui-sideline-show-diagnostics nil)
- '(lsp-enable-file-watchers t)
- '(lsp-file-watch-threshold 200)
+ ;;  '(lsp-enable-file-watchers t)
+ ;;  '(lsp-file-watch-threshold 200)
  )
 
 

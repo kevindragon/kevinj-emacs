@@ -232,3 +232,6 @@
 [submodule "extensions/diminish.el"]
 	path = extensions/diminish.el
 	url = https://github.com/myrjola/diminish.el.git
+[submodule "extensions/company-lsp"]
+	path = extensions/company-lsp
+	url = https://github.com/tigersoldier/company-lsp.git

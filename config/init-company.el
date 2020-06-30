@@ -15,11 +15,17 @@
 (add-extension-dir "company-quickhelp")
 (require 'company-quickhelp)
 
+(add-extension-dir "company-lsp")
+(require 'company-lsp)
+
 ;;; Code:
 
 (setq company-minimum-prefix-length 2)
 (add-hook 'company-mode-hook 'company-quickhelp-mode)
 (add-hook 'after-init-hook 'global-company-mode)
+
+;; add company lsp backend
+(push 'company-lsp company-backends)
 
 (provide 'init-company)
 

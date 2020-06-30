@@ -27,7 +27,8 @@
 ;;                 mode-line-end-spaces))
 ;; (force-mode-line-update)
 (dolist (m '(yas-minor-mode symbol-overlay-mode eldoc-mode which-key-mode
-             ivy-mode projectile-mode company-mode flycheck-mode))
+             ivy-mode projectile-mode company-mode auto-revert-mode
+             abbrev-mode))
   (when (bound-and-true-p m)
     (diminish m "")))
 
