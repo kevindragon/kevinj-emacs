@@ -9,6 +9,9 @@
 (add-extension-dir "php-mode")
 (load "php-mode-autoloads.el")
 
+(add-extension-dir "phpunit.el")
+(require 'phpunit)
+
 ;;; Code:
 
 (add-hook 'php-mode-hook #'lsp)

@@ -14,7 +14,7 @@
 (dashboard-setup-startup-hook)
 (setq dashboard-items '((agenda . 10)
                         ;; (bookmarks . 5)
-                        (projects . 10)
+                        (projects . 20)
                         (recents  . 20)
                         ;; (registers . 5)
                         ))
