@@ -22,9 +22,6 @@
 (add-extension-dir "emacs-python-pytest")
 (require 'python-pytest)
 
-(add-extension-dir "blacken")
-(require 'blacken)
-
 (require 'pyrepl-mode)
 
 ;;; Code:
@@ -47,7 +44,6 @@
   (when (boundp symbol-overlay-mode) (symbol-overlay-mode))
   (lsp-deferred)
 	(setq mode-name "ⓟ")
-	;; (blacken-mode 1)
   )
 (add-hook 'python-mode-hook #'my-python-hook)
 
