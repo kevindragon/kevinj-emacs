@@ -238,3 +238,6 @@
 [submodule "extensions/phpunit.el"]
 	path = extensions/phpunit.el
 	url = https://github.com/nlamirault/phpunit.el.git
+[submodule "themes/dracula"]
+	path = themes/dracula
+	url = https://github.com/dracula/emacs.git
