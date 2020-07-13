@@ -241,3 +241,6 @@
 [submodule "themes/dracula"]
 	path = themes/dracula
 	url = https://github.com/dracula/emacs.git
+[submodule "extensions/emacs-easy-hugo"]
+	path = extensions/emacs-easy-hugo
+	url = https://github.com/masasam/emacs-easy-hugo.git
