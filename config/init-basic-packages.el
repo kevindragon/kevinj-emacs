@@ -49,6 +49,7 @@
 
 ;; 添加exec-path-from-shell
 (add-extension-dir "exec-path-from-shell")
+(require 'exec-path-from-shell)
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
