@@ -20,7 +20,10 @@
 (defvar my-emacs-extension-dir (concat user-emacs-directory "/extensions/"))
 (defvar my-emacs-theme-dir (concat user-emacs-directory "/themes/"))
 
-(defvar my-workspace-dir "C:/workspace")
+(defvar my-workspace-dir
+  (if (string-equal system-type "windows-nt")
+      "C:/workspace"
+    (expand-file-name "~/workspace")))
 
 (defun add-extension-dir (dir)
   (add-to-list 'load-path (concat my-emacs-extension-dir dir)))
