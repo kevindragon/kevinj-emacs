@@ -26,10 +26,11 @@
 (setq org-startup-truncated t)          ;默认换行
 
 (defun kj/org-mode-hook ()
-  (setq org-html-table-default-attributes
-				(plist-put org-html-table-default-attributes :rules "all"))
-  (setq org-html-table-default-attributes
-				(plist-put org-html-table-default-attributes :frame "border")))
+  (when (bound-and-true-p org-html-table-default-attributes)
+    (setq org-html-table-default-attributes
+				  (plist-put org-html-table-default-attributes :rules "all"))
+    (setq org-html-table-default-attributes
+				  (plist-put org-html-table-default-attributes :frame "border"))))
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 
