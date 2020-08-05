@@ -34,10 +34,10 @@
  ;; '(lsp-signature-render-documentation nil)
  ;; '(lsp-ui-doc-alignment 'frame)
  ;; '(lsp-ui-doc-position 'at-point)
- '(lsp-ui-doc-include-signature t)
- '(lsp-ui-sideline-show-diagnostics nil)
- ;;  '(lsp-enable-file-watchers t)
- ;;  '(lsp-file-watch-threshold 200)
+ ;; '(lsp-ui-doc-include-signature t)
+ ;; '(lsp-ui-sideline-show-diagnostics nil)
+ ;; '(lsp-enable-file-watchers t)
+ ;; '(lsp-file-watch-threshold 200)
  )
 
 

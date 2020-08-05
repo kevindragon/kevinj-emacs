@@ -63,7 +63,7 @@
     (require 'init-projectile)
     (require 'init-symbol-overlay)
     (require 'init-yasnippet)
-    (require 'init-auto-insert)
+
     (require 'init-rg)
     (require 'init-flycheck)
 
@@ -71,8 +71,8 @@
 
     (require 'init-magit)
 
-    (require 'init-lsp)
     (require 'init-company)
+    (require 'init-lsp)
     (require 'init-xml)
     (require 'init-python)
     (require 'init-restclient)
@@ -97,7 +97,7 @@
 
     (require 'init-dashboard)
     (require 'init-hugo)
-
+    (require 'init-auto-insert)
     (require 'init-model-line)
     ))
 (put 'erase-buffer 'disabled nil)

@@ -37,6 +37,32 @@
 
 ;;;***
 
+;;;### (autoloads nil "../extensions/lsp-mode/lsp-completion" "../extensions/lsp-mode/lsp-completion.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/lsp-mode/lsp-completion.el
+
+(autoload 'lsp-completion-at-point "../extensions/lsp-mode/lsp-completion" "\
+Get lsp completions." nil nil)
+
+(autoload 'lsp-completion--enable "../extensions/lsp-mode/lsp-completion" "\
+Enable LSP completion support." nil nil)
+
+(autoload 'lsp-completion-mode "../extensions/lsp-mode/lsp-completion" "\
+Toggle LSP completion support.
+
+If called interactively, enable Lsp-Completion mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+\(fn &optional ARG)" t nil)
+
+(add-hook 'lsp-configure-hook (lambda nil (when (and lsp-auto-configure lsp-completion-enable) (lsp-completion--enable))))
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-completion" '("lsp-completion-")))
+
+;;;***
+
 ;;;### (autoloads nil "../extensions/lsp-mode/lsp-cpp" "../extensions/lsp-mode/lsp-cpp.el"
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from ../extensions/lsp-mode/lsp-cpp.el
@@ -127,6 +153,34 @@ Load all of the provided PROJECTS.
 
 ;;;***
 
+;;;### (autoloads nil "../extensions/lsp-mode/lsp-headerline" "../extensions/lsp-mode/lsp-headerline.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/lsp-mode/lsp-headerline.el
+
+(autoload 'lsp-headerline-breadcrumb-mode "../extensions/lsp-mode/lsp-headerline" "\
+Toggle breadcrumb on headerline.
+
+If called interactively, enable Lsp-Headerline-Breadcrumb mode if
+ARG is positive, and disable it if ARG is zero or negative.  If
+called from Lisp, also enable the mode if ARG is omitted or nil,
+and toggle it if ARG is `toggle'; disable the mode otherwise.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'lsp-breadcrumb-go-to-symbol "../extensions/lsp-mode/lsp-headerline" "\
+Go to the symbol on breadcrumb at SYMBOL-POSITION.
+
+\(fn SYMBOL-POSITION)" t nil)
+
+(autoload 'lsp-breadcrumb-narrow-to-symbol "../extensions/lsp-mode/lsp-headerline" "\
+Narrow to the symbol range on breadcrumb at SYMBOL-POSITION.
+
+\(fn SYMBOL-POSITION)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-headerline" '("lsp-headerline-")))
+
+;;;***
+
 ;;;### (autoloads nil "../extensions/lsp-mode/lsp-html" "../extensions/lsp-mode/lsp-html.el"
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from ../extensions/lsp-mode/lsp-html.el
@@ -148,6 +202,33 @@ Load all of the provided PROJECTS.
 ;;; Generated autoloads from ../extensions/lsp-mode/lsp-json.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-json" '("lsp-")))
+
+;;;***
+
+;;;### (autoloads nil "../extensions/lsp-mode/lsp-lens" "../extensions/lsp-mode/lsp-lens.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/lsp-mode/lsp-lens.el
+
+(autoload 'lsp-lens-show "../extensions/lsp-mode/lsp-lens" "\
+Display lenses in the buffer." t nil)
+
+(autoload 'lsp-lens-hide "../extensions/lsp-mode/lsp-lens" "\
+Delete all lenses." t nil)
+
+(autoload 'lsp-lens-mode "../extensions/lsp-mode/lsp-lens" "\
+Toggle code-lens overlays.
+
+If called interactively, enable Lsp-Lens mode if ARG is positive,
+and disable it if ARG is zero or negative.  If called from Lisp,
+also enable the mode if ARG is omitted or nil, and toggle it if
+ARG is `toggle'; disable the mode otherwise.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'lsp-avy-lens "../extensions/lsp-mode/lsp-lens" "\
+Click lsp lens using `avy' package." t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-lens" '("lsp-lens-")))
 
 ;;;***
 
@@ -173,6 +254,36 @@ Entry point that defers server startup until buffer is visible.
 This avoids overloading the server with many files when starting Emacs." nil nil)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-mode" '("lsp-" "make-lsp-client" "when-lsp-workspace" "with-lsp-workspace")))
+
+;;;***
+
+;;;### (autoloads nil "../extensions/lsp-mode/lsp-modeline" "../extensions/lsp-mode/lsp-modeline.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/lsp-mode/lsp-modeline.el
+
+(autoload 'lsp-modeline-code-actions-mode "../extensions/lsp-mode/lsp-modeline" "\
+Toggle code actions on modeline.
+
+If called interactively, enable Lsp-Modeline-Code-Actions mode if
+ARG is positive, and disable it if ARG is zero or negative.  If
+called from Lisp, also enable the mode if ARG is omitted or nil,
+and toggle it if ARG is `toggle'; disable the mode otherwise.
+
+\(fn &optional ARG)" t nil)
+
+(define-obsolete-function-alias 'lsp-diagnostics-modeline-mode 'lsp-modeline-diagnostics-mode "lsp-mode 7.0.1")
+
+(autoload 'lsp-modeline-diagnostics-mode "../extensions/lsp-mode/lsp-modeline" "\
+Toggle diagnostics modeline.
+
+If called interactively, enable Lsp-Modeline-Diagnostics mode if
+ARG is positive, and disable it if ARG is zero or negative.  If
+called from Lisp, also enable the mode if ARG is omitted or nil,
+and toggle it if ARG is `toggle'; disable the mode otherwise.
+
+\(fn &optional ARG)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-modeline" '("lsp-")))
 
 ;;;***
 
@@ -220,7 +331,7 @@ This avoids overloading the server with many files when starting Emacs." nil nil
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from ../extensions/lsp-mode/lsp-serenata.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-serenata" '("lsp-serenata-server-")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-serenata" '("lsp-serenata-")))
 
 ;;;***
 

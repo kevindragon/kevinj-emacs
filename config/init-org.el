@@ -26,6 +26,7 @@
 (setq org-startup-truncated t)          ;默认换行
 
 (defun kj/org-mode-hook ()
+  ;; (add-to-list 'org-file-apps '("\\.xls\\|.xlsx\\'" . default))
   (when (bound-and-true-p org-html-table-default-attributes)
     (setq org-html-table-default-attributes
 				  (plist-put org-html-table-default-attributes :rules "all"))

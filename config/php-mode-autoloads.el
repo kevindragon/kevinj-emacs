@@ -6,24 +6,25 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "php" "php.el" (0 0 0 0))
-;;; Generated autoloads from php.el
+;;;### (autoloads nil "../extensions/php-mode/php" "../extensions/php-mode/php.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/php-mode/php.el
 
-(let ((loads (get 'php 'custom-loads))) (if (member '"php" loads) nil (put 'php 'custom-loads (cons '"php" loads))))
+(let ((loads (get 'php 'custom-loads))) (if (member '"../extensions/php-mode/php" loads) nil (put 'php 'custom-loads (cons '"../extensions/php-mode/php" loads))))
 
-(autoload 'php-mode-maybe "php" "\
+(autoload 'php-mode-maybe "../extensions/php-mode/php" "\
 Select PHP mode or other major mode." t nil)
 
-(autoload 'php-current-class "php" "\
+(autoload 'php-current-class "../extensions/php-mode/php" "\
 Insert current class name if cursor in class context." t nil)
 
-(autoload 'php-current-namespace "php" "\
+(autoload 'php-current-namespace "../extensions/php-mode/php" "\
 Insert current namespace if cursor in namespace context." t nil)
 
-(autoload 'php-copyit-fqsen "php" "\
+(autoload 'php-copyit-fqsen "../extensions/php-mode/php" "\
 Copy/kill class/method FQSEN." t nil)
 
-(autoload 'php-run-builtin-web-server "php" "\
+(autoload 'php-run-builtin-web-server "../extensions/php-mode/php" "\
 Run PHP Built-in web server.
 
 `ROUTER-OR-DIR': Path to router PHP script or Document root.
@@ -35,22 +36,23 @@ When `DOCUMENT-ROOT' is NIL, the document root is obtained from `ROUTER-OR-DIR'.
 
 \(fn ROUTER-OR-DIR HOSTNAME PORT &optional DOCUMENT-ROOT)" t nil)
 
-(autoload 'php-find-system-php-ini-file "php" "\
+(autoload 'php-find-system-php-ini-file "../extensions/php-mode/php" "\
 Find php.ini FILE by `php --ini'.
 
 \(fn &optional FILE)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "php" '("php-")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/php-mode/php" '("php-")))
 
 ;;;***
 
-;;;### (autoloads nil "php-align" "php-align.el" (0 0 0 0))
-;;; Generated autoloads from php-align.el
+;;;### (autoloads nil "../extensions/php-mode/php-align" "../extensions/php-mode/php-align.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/php-mode/php-align.el
 
-(autoload 'php-align-setup "php-align" "\
+(autoload 'php-align-setup "../extensions/php-mode/php-align" "\
 Setup alignment configuration for PHP code." nil nil)
 
-(autoload 'php-align-mode "php-align" "\
+(autoload 'php-align-mode "../extensions/php-mode/php-align" "\
 Alignment lines for PHP script.
 
 If called interactively, enable Php-Align mode if ARG is
@@ -60,29 +62,31 @@ toggle it if ARG is `toggle'; disable the mode otherwise.
 
 \(fn &optional ARG)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "php-align" '("php-align-")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/php-mode/php-align" '("php-align-")))
 
 ;;;***
 
-;;;### (autoloads nil "php-face" "php-face.el" (0 0 0 0))
-;;; Generated autoloads from php-face.el
+;;;### (autoloads nil "../extensions/php-mode/php-face" "../extensions/php-mode/php-face.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/php-mode/php-face.el
 
-(let ((loads (get 'php-faces 'custom-loads))) (if (member '"php-face" loads) nil (put 'php-faces 'custom-loads (cons '"php-face" loads))))
+(let ((loads (get 'php-faces 'custom-loads))) (if (member '"../extensions/php-mode/php-face" loads) nil (put 'php-faces 'custom-loads (cons '"../extensions/php-mode/php-face" loads))))
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "php-face" '("php-annotations-annotation-face")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/php-mode/php-face" '("php-annotations-annotation-face")))
 
 ;;;***
 
-;;;### (autoloads nil "php-mode" "php-mode.el" (0 0 0 0))
-;;; Generated autoloads from php-mode.el
+;;;### (autoloads nil "../extensions/php-mode/php-mode" "../extensions/php-mode/php-mode.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/php-mode/php-mode.el
 
-(let ((loads (get 'php-mode 'custom-loads))) (if (member '"php-mode" loads) nil (put 'php-mode 'custom-loads (cons '"php-mode" loads))))
+(let ((loads (get 'php-mode 'custom-loads))) (if (member '"../extensions/php-mode/php-mode" loads) nil (put 'php-mode 'custom-loads (cons '"../extensions/php-mode/php-mode" loads))))
 
 (if (version< emacs-version "24.4") (dolist (i '("php" "php5" "php7")) (add-to-list 'interpreter-mode-alist (cons i 'php-mode))) (add-to-list 'interpreter-mode-alist (cons "php\\(?:-?[3457]\\(?:\\.[0-9]+\\)*\\)?" 'php-mode)))
 
 (define-obsolete-variable-alias 'php-available-project-root-files 'php-project-available-root-files "1.19.0")
 
-(autoload 'php-mode "php-mode" "\
+(autoload 'php-mode "../extensions/php-mode/php-mode" "\
 Major mode for editing PHP code.
 
 \\{php-mode-map}
@@ -95,20 +99,21 @@ Major mode for editing PHP code.
 
 (add-to-list 'auto-mode-alist '("\\.\\(?:php[s345]?\\|phtml\\)\\'" . php-mode-maybe))
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "php-mode" '("php-")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/php-mode/php-mode" '("php-")))
 
 ;;;***
 
-;;;### (autoloads nil "php-mode-debug" "php-mode-debug.el" (0 0 0
-;;;;;;  0))
-;;; Generated autoloads from php-mode-debug.el
+;;;### (autoloads nil "../extensions/php-mode/php-mode-debug" "../extensions/php-mode/php-mode-debug.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/php-mode/php-mode-debug.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "php-mode-debug" '("php-mode-debug")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/php-mode/php-mode-debug" '("php-mode-debug")))
 
 ;;;***
 
-;;;### (autoloads nil "php-project" "php-project.el" (0 0 0 0))
-;;; Generated autoloads from php-project.el
+;;;### (autoloads nil "../extensions/php-mode/php-project" "../extensions/php-mode/php-project.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/php-mode/php-project.el
 
 (defvar-local php-project-root 'auto "\
 Method of searching for the top level directory.
@@ -203,13 +208,13 @@ Function name or path to server-start script.")
 
 (put 'php-project-server-start 'safe-local-variable #'(lambda (v) (or (functionp v) (php-project--eval-bootstrap-scripts v))))
 
-(autoload 'php-project-get-bootstrap-scripts "php-project" "\
+(autoload 'php-project-get-bootstrap-scripts "../extensions/php-mode/php-project" "\
 Return list of bootstrap script." nil nil)
 
-(autoload 'php-project-get-root-dir "php-project" "\
+(autoload 'php-project-get-root-dir "../extensions/php-mode/php-project" "\
 Return path to current PHP project." nil nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "php-project" '("php-project-")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/php-mode/php-project" '("php-project-")))
 
 ;;;***
 

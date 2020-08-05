@@ -11,6 +11,7 @@
 /server
 *.bak
 /workspace/
+/request/
 /eclipse.jdt.ls
 /tramp
 /lsp-cache
