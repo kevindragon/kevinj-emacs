@@ -41,6 +41,8 @@
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from ../extensions/lsp-mode/lsp-completion.el
 
+(define-obsolete-variable-alias 'lsp-prefer-capf 'lsp-completion-provider "lsp-mode 7.0.1")
+
 (autoload 'lsp-completion-at-point "../extensions/lsp-mode/lsp-completion" "\
 Get lsp completions." nil nil)
 
@@ -89,6 +91,33 @@ Explain a clang-tidy ERROR by scraping documentation from llvm.org.
 ;;; Generated autoloads from ../extensions/lsp-mode/lsp-css.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-css" '("lsp-css-")))
+
+;;;***
+
+;;;### (autoloads nil "../extensions/lsp-mode/lsp-diagnostics" "../extensions/lsp-mode/lsp-diagnostics.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/lsp-mode/lsp-diagnostics.el
+
+(define-obsolete-variable-alias 'lsp-diagnostic-package 'lsp-diagnostics-provider "lsp-mode 7.0.1")
+
+(define-obsolete-variable-alias 'lsp-flycheck-default-level 'lsp-diagnostics-flycheck-default-level "lsp-mode 7.0.1")
+
+(autoload 'lsp-diagnostics--enable "../extensions/lsp-mode/lsp-diagnostics" "\
+Enable LSP checker support." nil nil)
+
+(autoload 'lsp-diagnostics-mode "../extensions/lsp-mode/lsp-diagnostics" "\
+Toggle LSP diagnostics integration.
+
+If called interactively, enable Lsp-Diagnostics mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+\(fn &optional ARG)" t nil)
+
+(add-hook 'lsp-configure-hook (lambda nil (when lsp-auto-configure (lsp-diagnostics--enable))))
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-diagnostics" '("lsp-diagnostics-")))
 
 ;;;***
 
@@ -261,6 +290,8 @@ This avoids overloading the server with many files when starting Emacs." nil nil
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from ../extensions/lsp-mode/lsp-modeline.el
 
+(define-obsolete-variable-alias 'lsp-diagnostics-modeline-scope 'lsp-modeline-diagnostics-scope "lsp-mode 7.0.1")
+
 (autoload 'lsp-modeline-code-actions-mode "../extensions/lsp-mode/lsp-modeline" "\
 Toggle code actions on modeline.
 
@@ -291,7 +322,7 @@ and toggle it if ARG is `toggle'; disable the mode otherwise.
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from ../extensions/lsp-mode/lsp-perl.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-perl" '("lsp-perl-language-server-")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-perl" '("lsp-perl-")))
 
 ;;;***
 

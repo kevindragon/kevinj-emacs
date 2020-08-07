@@ -56,6 +56,10 @@
 ;; websocket算是基础包进行加载
 (add-extension-dir "emacs-websocket")
 
+(add-extension-dir "page-break-lines")
+(require 'page-break-lines)
+(global-page-break-lines-mode +1)
+
 
 (provide 'init-basic-packages)
 

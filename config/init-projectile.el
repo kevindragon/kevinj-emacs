@@ -8,7 +8,8 @@
 ;;; Require
 
 (add-extension-dir "projectile")
-(require 'projectile)
+(require 'init-projectile-autoloads)
+;; (require 'projectile)
 
 ;;; Code:
 

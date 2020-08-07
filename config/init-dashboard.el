@@ -6,7 +6,6 @@
 ;; Copyright (C) 2020, Kevin Jiang, all rights reserved.
 
 ;;; Require
-(add-extension-dir "page-break-lines")
 (add-extension-dir "emacs-dashboard")
 (require 'dashboard)
 

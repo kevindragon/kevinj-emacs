@@ -94,9 +94,6 @@
 [submodule "extensions/restclient.el"]
 	path = extensions/restclient.el
 	url = https://github.com/pashky/restclient.el.git
-[submodule "extensions/treemacs"]
-	path = extensions/treemacs
-	url = https://github.com/Alexander-Miller/treemacs.git
 [submodule "extensions/lsp-treemacs"]
 	path = extensions/lsp-treemacs
 	url = https://github.com/emacs-lsp/lsp-treemacs.git
@@ -241,3 +238,6 @@
 [submodule "extensions/emacs-easy-hugo"]
 	path = extensions/emacs-easy-hugo
 	url = https://github.com/masasam/emacs-easy-hugo.git
+[submodule "extensions/treemacs"]
+	path = extensions/treemacs
+	url = https://github.com/Alexander-Miller/treemacs.git
