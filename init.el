@@ -89,6 +89,7 @@
     (require 'init-ruby)
 
     (require 'init-treemacs)
+    (require 'init-plantuml)
 
     (require 'randomize-region)
 
@@ -98,7 +99,7 @@
     (require 'init-dashboard)
     (require 'init-hugo)
     (require 'init-auto-insert)
-    (require 'init-model-line)
+    (require 'init-modeline)
     ))
 (put 'erase-buffer 'disabled nil)
 (put 'narrow-to-region 'disabled nil)

@@ -38,6 +38,7 @@
  ;; '(lsp-ui-sideline-show-diagnostics nil)
  ;; '(lsp-enable-file-watchers t)
  ;; '(lsp-file-watch-threshold 200)
+ '(lsp-keep-workspace-alive nil)
  )
 
 

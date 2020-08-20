@@ -1,6 +1,6 @@
-;;; init-model-line.el --- Init for model-line
+;;; init-modeline.el --- Init for modeline
 
-;; Filename: init-model-line.el
+;; Filename: init-modeline.el
 ;; Author: Kevin Jiang <wenlin1988@126.com>
 ;; Maintainer: Kevin Jiang <wenlin1988@126.com>
 ;; Copyright (C) 2020, Kevin Jiang, all rights reserved.
@@ -33,6 +33,6 @@
     (diminish m "")))
 
 
-(provide 'init-model-line)
+(provide 'init-modeline)
 
-;;; init-model-line.el ends here
+;;; init-modeline.el ends here

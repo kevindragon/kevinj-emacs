@@ -1,0 +1,28 @@
+;;; init-plantuml.el --- Init for plantuml
+
+;; Filename: init-plantuml.el
+;; Author: Kevin Jiang <wenlin1988@126.com>
+;; Maintainer: Kevin Jiang <wenlin1988@126.com>
+;; Copyright (C) 2020, Kevin Jiang, all rights reserved.
+
+;;; Require
+(add-extension-dir "plantuml-mode")
+(require 'plantuml-mode)
+
+;;; Code:
+
+;; Sample jar configuration
+(setq plantuml-jar-path "c:/software/plantuml.jar")
+(setq plantuml-default-exec-mode 'jar)
+
+;; Sample executable configuration
+;; (setq plantuml-executable-path "/path/to/your/copy/of/plantuml.bin")
+;; (setq plantuml-default-exec-mode 'executable)
+
+;; Enable plantuml-mode for PlantUML files
+(add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode))
+
+
+(provide 'init-plantuml)
+
+;;; init-plantuml.el ends here

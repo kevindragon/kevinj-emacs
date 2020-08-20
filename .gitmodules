@@ -241,3 +241,9 @@
 [submodule "extensions/treemacs"]
 	path = extensions/treemacs
 	url = https://github.com/Alexander-Miller/treemacs.git
+[submodule "extensions/xterm-color"]
+	path = extensions/xterm-color
+	url = https://github.com/atomontage/xterm-color.git
+[submodule "extensions/plantuml-mode"]
+	path = extensions/plantuml-mode
+	url = https://github.com/skuro/plantuml-mode.git
