@@ -21,8 +21,8 @@
 ;;; Require
 
 (add-extension-dir "lsp-mode")
-(add-extension-dir "lsp-ui")
 (add-extension-dir "dap-mode")
+(add-extension-dir "lsp-ui")
 
 (require 'init-lsp-autoloads)
 (require 'init-dap-autoloads)
@@ -40,6 +40,23 @@
  ;; '(lsp-file-watch-threshold 200)
  '(lsp-keep-workspace-alive nil)
  )
+
+(add-hook 'dap-stopped-hook
+          (lambda (arg) (call-interactively #'dap-hydra)))
+
+(dap-mode 1)
+
+;; The modes below are optional
+
+(dap-ui-mode 1)
+;; enables mouse hover support
+(dap-tooltip-mode 1)
+;; use tooltips for mouse hover
+;; if it is not enabled `dap-mode' will use the minibuffer.
+(tooltip-mode 1)
+;; displays floating panel with debug buttons
+;; requies emacs 26+
+(dap-ui-controls-mode 1)
 
 
 (provide 'init-lsp)

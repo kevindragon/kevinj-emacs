@@ -247,3 +247,18 @@
 [submodule "extensions/plantuml-mode"]
 	path = extensions/plantuml-mode
 	url = https://github.com/skuro/plantuml-mode.git
+[submodule "extensions/org-roam"]
+	path = extensions/org-roam
+	url = https://github.com/org-roam/org-roam.git
+[submodule "extensions/emacsql"]
+	path = extensions/emacsql
+	url = https://github.com/skeeto/emacsql.git
+[submodule "extensions/emacsql-sqlite3"]
+	path = extensions/emacsql-sqlite3
+	url = https://github.com/cireu/emacsql-sqlite3.git
+[submodule "extensions/org-roam-server"]
+	path = extensions/org-roam-server
+	url = https://github.com/org-roam/org-roam-server.git
+[submodule "extensions/emacs-web-server"]
+	path = extensions/emacs-web-server
+	url = https://github.com/skeeto/emacs-web-server.git

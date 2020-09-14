@@ -275,6 +275,7 @@ If region is active, normalize the region and shift."
     (define-key map (kbd "C-c C-k") 'elpy-shell-kill)
     (define-key map (kbd "C-c C-K") 'elpy-shell-kill-all)
     (define-key map (kbd "<C-return>") 'elpy-shell-send-statement-and-step)
+    (define-key map (kbd "C-c C-e") 'elpy-shell-send-statement-and-go)
     (define-key inferior-python-mode-map (kbd "C-c C-z") 'elpy-shell-switch-to-buffer)
     map))
 

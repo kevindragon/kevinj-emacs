@@ -11,7 +11,8 @@
 (add-extension-dir "treemacs/src/extra")
 (add-extension-dir "lsp-treemacs")
 (require 'treemacs)
-(require 'lsp-treemacs)
+(with-eval-after-load 'lsp-mode
+  (require 'lsp-treemacs))
 
 ;;; Code:
 

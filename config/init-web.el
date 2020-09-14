@@ -21,7 +21,8 @@
   (setq default-tab-width 2
 		tab-width 2
 		indent-tabs-mode nil)
-  (lsp-deferred))
+  ;; (lsp-deferred)
+  )
 
 (add-hook 'js-mode-hook #'kj/js-mode-hook)
 

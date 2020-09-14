@@ -68,10 +68,12 @@
     (require 'init-flycheck)
 
     (require 'init-org)
+    ;; (require 'init-org-roam)
 
     (require 'init-magit)
 
     (require 'init-company)
+    (require 'init-treemacs)
     (require 'init-lsp)
     (require 'init-xml)
     (require 'init-python)
@@ -88,7 +90,6 @@
     (require 'init-clojure)
     (require 'init-ruby)
 
-    (require 'init-treemacs)
     (require 'init-plantuml)
 
     (require 'randomize-region)

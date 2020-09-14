@@ -17,3 +17,5 @@
 /lsp-cache
 /eshell
 \.#*
+.dap-breakpoints
+bookmarks

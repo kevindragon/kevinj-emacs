@@ -9,7 +9,7 @@
 (add-extension-dir "lsp-java")
 (require 'lsp-java)
 
-;; (require 'dap-java)
+(require 'dap-java)
 
 ;;; Code:
 (defun kj/java-mode-hook ()
