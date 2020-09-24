@@ -33,6 +33,29 @@
 ;; (setenv "LANG" "zh_CN.UTF-8")
 (setenv "LANG" "en_US.UTF-8")
 
+;;; set fonts
+(when (eq system-type 'windows-nt)
+  (set-face-attribute
+   'default nil
+   :font (font-spec
+          ;; :name "-outline-Courier New-bold-italic-normal-mono-*-*-*-*-c-*-iso10646-1"
+          :family "Source Code Pro"  ; "Courier New"
+          :weight 'normal
+          :slant 'normal
+          :size 9.5))
+  (dolist (charset '(kana han symbol cjk-misc bopomofo))
+    (set-fontset-font
+     (frame-parameter nil 'font)
+     charset
+     (font-spec
+      ;; :name "-outline-微软雅黑-normal-normal-normal-sans-*-*-*-*-p-*-iso10646-1"
+      :family "Microsoft Yahei"
+      :weight 'normal
+      :slant 'normal
+      :size 12.0)))
+  ;; (setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2)))
+  )
+
 ;;; set location on frame title
 (defun frame-title-string ()
   "Return the file name of current buffer, using ~ if under home directory"

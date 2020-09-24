@@ -28,7 +28,6 @@
 
 (defun kj/org-mode-hook ()
   ;; (add-to-list 'org-file-apps '("\\.xls\\|.xlsx\\'" . default))
-  (message "kj/org-mode-hook")
   (when (bound-and-true-p org-html-table-default-attributes)
     (setq org-html-table-default-attributes
 				  (plist-put org-html-table-default-attributes :rules "all"))
