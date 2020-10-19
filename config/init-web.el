@@ -37,7 +37,8 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
 (setq web-mode-engines-alist
-      '(("php"    . "\\.phtml\\'")
+      '(
+        ;; ("php"    . "\\.phtml\\'")
         ("blade"  . "\\.blade\\.")))
 
 (setq web-mode-script-padding 0

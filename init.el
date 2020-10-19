@@ -101,6 +101,8 @@
     (require 'init-hugo)
     (require 'init-auto-insert)
     (require 'init-modeline)
+
+    (require 'init-docker)
     ))
 (put 'erase-buffer 'disabled nil)
 (put 'narrow-to-region 'disabled nil)

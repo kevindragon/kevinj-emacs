@@ -262,3 +262,12 @@
 [submodule "extensions/emacs-web-server"]
 	path = extensions/emacs-web-server
 	url = https://github.com/skeeto/emacs-web-server.git
+[submodule "extensions/dockerfile-mode"]
+	path = extensions/dockerfile-mode
+	url = https://github.com/spotify/dockerfile-mode.git
+[submodule "extensions/docker.el"]
+	path = extensions/docker.el
+	url = https://github.com/Silex/docker.el.git
+[submodule "extensions/tablist"]
+	path = extensions/tablist
+	url = https://github.com/politza/tablist.git

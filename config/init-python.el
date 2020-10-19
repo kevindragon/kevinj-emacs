@@ -44,6 +44,8 @@
   (when (boundp symbol-overlay-mode) (symbol-overlay-mode))
   (lsp-deferred)
 	(setq mode-name "ⓟ")
+  ;; set python shell as dedicated mode
+  (elpy-shell-toggle-dedicated-shell 1)
   )
 (add-hook 'python-mode-hook #'my-python-hook)
 
