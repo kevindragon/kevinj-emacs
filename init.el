@@ -16,9 +16,11 @@
  package-enable-at-startup nil
  package--init-file-ensured t)
 
-(defvar my-emacs-config-dir (concat user-emacs-directory "/config/"))
-(defvar my-emacs-extension-dir (concat user-emacs-directory "/extensions/"))
-(defvar my-emacs-theme-dir (concat user-emacs-directory "/themes/"))
+(defvar my-emacs-config-dir
+  (expand-file-name "config" user-emacs-directory))
+(defvar my-emacs-extension-dir
+  (expand-file-name "extensions" user-emacs-directory))
+(defvar my-emacs-theme-dir (expand-file-name "themes" user-emacs-directory))
 
 (defvar my-workspace-dir
   (if (string-equal system-type "windows-nt")
@@ -26,11 +28,11 @@
     (expand-file-name "~/workspace")))
 
 (defun add-extension-dir (dir)
-  (add-to-list 'load-path (concat my-emacs-extension-dir dir)))
+  (add-to-list 'load-path (expand-file-name dir my-emacs-extension-dir)))
 
 (defun add-theme-dir (dir)
-  (add-to-list 'custom-theme-load-path (concat my-emacs-theme-dir dir))
-  (add-to-list 'load-path (concat my-emacs-theme-dir dir)))
+  (add-to-list 'custom-theme-load-path (expand-file-name dir my-emacs-theme-dir))
+  (add-to-list 'load-path (expand-file-name dir my-emacs-theme-dir)))
 
 (add-to-list 'load-path my-emacs-config-dir)
 (add-to-list 'load-path my-emacs-extension-dir)
@@ -82,6 +84,7 @@
     (require 'init-xquery)
     (require 'init-log-mode)
     (require 'init-web)
+    (require 'init-typescript)
     (require 'init-java)
     (require 'init-groovy)
     (require 'init-rust)
@@ -103,6 +106,7 @@
     (require 'init-modeline)
 
     (require 'init-docker)
+    (require 'init-shell)
     ))
 (put 'erase-buffer 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
@@ -111,7 +115,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(lsp-enable-file-watchers t)
+ '(lsp-file-watch-threshold 500)
+ '(lsp-keep-workspace-alive nil)
+ '(package-selected-packages '(hydra)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

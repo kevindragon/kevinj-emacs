@@ -36,8 +36,8 @@
  ;; '(lsp-ui-doc-position 'at-point)
  ;; '(lsp-ui-doc-include-signature t)
  ;; '(lsp-ui-sideline-show-diagnostics nil)
- ;; '(lsp-enable-file-watchers t)
- ;; '(lsp-file-watch-threshold 200)
+ '(lsp-enable-file-watchers t)
+ '(lsp-file-watch-threshold 500)
  '(lsp-keep-workspace-alive nil)
  )
 

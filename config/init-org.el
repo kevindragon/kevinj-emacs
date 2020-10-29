@@ -38,6 +38,8 @@
 
 (add-hook 'org-mode-hook #'kj/org-mode-hook)
 
+(advice-add 'org-archive-default-command :after #'org-save-all-org-buffers)
+
 
 (provide 'init-org)
 

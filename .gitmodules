@@ -271,3 +271,9 @@
 [submodule "extensions/tablist"]
 	path = extensions/tablist
 	url = https://github.com/politza/tablist.git
+[submodule "extensions/lsp-jedi"]
+	path = extensions/lsp-jedi
+	url = https://github.com/fredcamps/lsp-jedi.git
+[submodule "extensions/lsp-pyright"]
+	path = extensions/lsp-pyright
+	url = https://github.com/emacs-lsp/lsp-pyright.git

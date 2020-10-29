@@ -15,9 +15,21 @@
 
 ;;; Require
 
-(add-extension-dir "lsp-python-ms")
-(setq lsp-python-ms-prefer-pyls nil)
-(require 'lsp-python-ms)
+;; (add-extension-dir "lsp-python-ms")
+;; (setq lsp-python-ms-prefer-pyls nil)
+;; (require 'lsp-python-ms)
+
+;; (add-extension-dir "lsp-jedi")
+;; (require 'lsp-jedi)
+;; (with-eval-after-load "lsp-mode"
+;;   (add-to-list 'lsp-disabled-clients 'pyls)
+;;   (add-to-list 'lsp-enabled-clients 'jedi))
+
+(add-extension-dir "lsp-pyright")
+(require 'lsp-pyright)
+(with-eval-after-load "lsp-mode"
+  (add-to-list 'lsp-disabled-clients 'pyls)
+  (add-to-list 'lsp-enabled-clients 'pyright))
 
 (add-extension-dir "emacs-python-pytest")
 (require 'python-pytest)

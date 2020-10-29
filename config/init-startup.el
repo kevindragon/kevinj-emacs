@@ -137,6 +137,15 @@
 ;; maximum frame
 (global-set-key (kbd "C-x w m") 'toggle-frame-maximized)
 
+;;
+(defun add-autoloads (extension-dir autoload-file)
+  (let ((generated-autoload-file autoload-file))
+    (when (not (file-exists-p generated-autoload-file))
+      (with-current-buffer (find-file-noselect generated-autoload-file)
+        (insert ";;") ;; create the file with non-zero size to appease autoload
+        (save-buffer)))
+    (update-directory-autoloads extension-dir)))
+
 
 (provide 'init-startup)
 
