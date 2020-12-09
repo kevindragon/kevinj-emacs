@@ -15,6 +15,9 @@
 (add-extension-dir "web-mode")
 (require 'web-mode)
 
+(with-eval-after-load "lsp-mode"
+  (add-to-list 'lsp-enabled-clients 'vls))
+
 ;;; Code:
 (defun kj/js-mode-hook ()
   (setq-default js-indent-level 2)

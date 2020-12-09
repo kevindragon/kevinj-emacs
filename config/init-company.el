@@ -10,6 +10,9 @@
 (add-extension-dir "company-mode")
 (require 'company)
 
+(add-extension-dir "company-posframe")
+(require 'company-posframe)
+
 (add-extension-dir "pos-tip")
 
 (add-extension-dir "company-quickhelp")
@@ -20,7 +23,9 @@
 (setq company-minimum-prefix-length 2)
 (add-hook 'company-mode-hook 'company-quickhelp-mode)
 (add-hook 'after-init-hook 'global-company-mode)
+(company-posframe-mode 1)
 
+
 (provide 'init-company)
 
 ;;; init-company.el ends here

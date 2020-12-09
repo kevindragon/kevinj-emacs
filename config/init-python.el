@@ -10,26 +10,21 @@
 ;; 把`init-python.el'添加到你的`load-path'
 ;; 添加`(require 'init-python)'到启动文件
 ;;
-;; 启动Emacs之后需要使用执行`lsp-python-ms-update-server'安装`mspyls'
-;;
 
 ;;; Require
 
-;; (add-extension-dir "lsp-python-ms")
-;; (setq lsp-python-ms-prefer-pyls nil)
-;; (require 'lsp-python-ms)
-
-;; (add-extension-dir "lsp-jedi")
-;; (require 'lsp-jedi)
-;; (with-eval-after-load "lsp-mode"
-;;   (add-to-list 'lsp-disabled-clients 'pyls)
-;;   (add-to-list 'lsp-enabled-clients 'jedi))
-
-(add-extension-dir "lsp-pyright")
-(require 'lsp-pyright)
+(add-extension-dir "lsp-python-ms")
+(setq lsp-python-ms-prefer-pyls nil)
+(require 'lsp-python-ms)
 (with-eval-after-load "lsp-mode"
   (add-to-list 'lsp-disabled-clients 'pyls)
-  (add-to-list 'lsp-enabled-clients 'pyright))
+  (add-to-list 'lsp-enabled-clients 'mspyls))
+
+;; (add-extension-dir "lsp-pyright")
+;; (require 'lsp-pyright)
+;; (with-eval-after-load "lsp-mode"
+;;   (add-to-list 'lsp-disabled-clients 'pyls)
+;;   (add-to-list 'lsp-enabled-clients 'pyright))
 
 (add-extension-dir "emacs-python-pytest")
 (require 'python-pytest)
@@ -57,7 +52,7 @@
   (lsp-deferred)
 	(setq mode-name "ⓟ")
   ;; set python shell as dedicated mode
-  (elpy-shell-toggle-dedicated-shell 1)
+  ;; (elpy-shell-toggle-dedicated-shell 1)
   )
 (add-hook 'python-mode-hook #'my-python-hook)
 

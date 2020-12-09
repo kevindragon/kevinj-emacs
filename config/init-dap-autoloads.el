@@ -3,7 +3,7 @@
 ;; Copyright (C) 2020  Kevin Jiang
 
 ;; Author: Kevin Jiang <wenlin1988@126.com>
-;; Keywords: 
+;; Keywords:
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
 
 ;;; Commentary:
 
-;; 
+;;
 
 ;;; Code:
 
@@ -28,6 +28,15 @@
 
 (provide 'init-dap-autoloads)
 ;;; init-dap-autoloads.el ends here
+;;
+
+;;;### (autoloads nil "../extensions/dap-mode/dap-cpptools" "../extensions/dap-mode/dap-cpptools.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/dap-mode/dap-cpptools.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/dap-mode/dap-cpptools" '("dap-cpptools-")))
+
+;;;***
 
 ;;;### (autoloads nil "../extensions/dap-mode/dap-edge" "../extensions/dap-mode/dap-edge.el"
 ;;;;;;  (0 0 0 0))
@@ -80,6 +89,14 @@ Run `dap-hydra/body'." t nil)
 
 ;;;***
 
+;;;### (autoloads nil "../extensions/dap-mode/dap-launch" "../extensions/dap-mode/dap-launch.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/dap-mode/dap-launch.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/dap-mode/dap-launch" '("dap-launch-")))
+
+;;;***
+
 ;;;### (autoloads nil "../extensions/dap-mode/dap-lldb" "../extensions/dap-mode/dap-lldb.el"
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from ../extensions/dap-mode/dap-lldb.el
@@ -91,6 +108,14 @@ Run `dap-hydra/body'." t nil)
 ;;;### (autoloads nil "../extensions/dap-mode/dap-mode" "../extensions/dap-mode/dap-mode.el"
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from ../extensions/dap-mode/dap-mode.el
+
+(autoload 'dap-debug "../extensions/dap-mode/dap-mode" "\
+Run debug configuration DEBUG-ARGS.
+
+If DEBUG-ARGS is not specified the configuration is generated
+after selecting configuration template.
+
+\(fn DEBUG-ARGS)" t nil)
 
 (defvar dap-mode nil "\
 Non-nil if Dap mode is enabled.
@@ -132,7 +157,7 @@ toggle it if ARG is `toggle'; disable the mode otherwise.
 
 \(fn &optional ARG)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/dap-mode/dap-mode" '("dap-" "dash-expand:&dap-session")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/dap-mode/dap-mode" '("dap-")))
 
 ;;;***
 
@@ -161,6 +186,14 @@ toggle it if ARG is `toggle'; disable the mode otherwise.
 \(fn &optional ARG)" t nil)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/dap-mode/dap-mouse" '("dap-")))
+
+;;;***
+
+;;;### (autoloads nil "../extensions/dap-mode/dap-netcore" "../extensions/dap-mode/dap-netcore.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/dap-mode/dap-netcore.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/dap-mode/dap-netcore" '("dap-netcore-")))
 
 ;;;***
 
@@ -270,18 +303,12 @@ Show auto configured feature windows." t nil)
 (autoload 'dap-ui-hide-many-windows "../extensions/dap-mode/dap-ui" "\
 Hide all debug windows when sessions are dead." t nil)
 
+(autoload 'dap-ui-repl "../extensions/dap-mode/dap-ui" "\
+Start an adapter-specific REPL.
+This could be used to evaluate JavaScript in a browser, to
+evaluate python in the context of the debugee, ...." t nil)
+
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/dap-mode/dap-ui" '("dap-")))
-
-;;;***
-
-;;;### (autoloads nil "../extensions/dap-mode/dap-ui-repl" "../extensions/dap-mode/dap-ui-repl.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../extensions/dap-mode/dap-ui-repl.el
-
-(autoload 'dap-ui-repl "../extensions/dap-mode/dap-ui-repl" "\
-Start a JavaScript REPL to be evaluated in the visiting browser." t nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/dap-mode/dap-ui-repl" '("company-dap-ui-repl" "dap-ui-")))
 
 ;;;***
 
@@ -290,6 +317,14 @@ Start a JavaScript REPL to be evaluated in the visiting browser." t nil)
 ;;; Generated autoloads from ../extensions/dap-mode/dap-utils.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/dap-mode/dap-utils" '("dap-utils-")))
+
+;;;***
+
+;;;### (autoloads nil "../extensions/dap-mode/dap-variables" "../extensions/dap-mode/dap-variables.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/dap-mode/dap-variables.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/dap-mode/dap-variables" '("dap-variables-")))
 
 ;;;***
 

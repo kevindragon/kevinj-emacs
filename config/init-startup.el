@@ -89,6 +89,8 @@
 (line-number-mode 1)
 (column-number-mode 1)
 (global-hl-line-mode +1)
+;; 超长行开启so-long-mode
+(global-so-long-mode 1)
 
 (recentf-mode 1)
 
@@ -145,6 +147,10 @@
         (insert ";;") ;; create the file with non-zero size to appease autoload
         (save-buffer)))
     (update-directory-autoloads extension-dir)))
+
+(defun init-autoloads (extension-dir autoload-file)
+  (when (not (f-exists? autoload-file))
+    (add-autoloads extension-dir autoload-file)))
 
 
 (provide 'init-startup)

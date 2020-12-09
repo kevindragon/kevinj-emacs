@@ -15,7 +15,10 @@
 (add-extension-dir "sesman")
 
 (add-extension-dir "cider")
-(load "init-cider-autoloads" t t)
+(init-autoloads (expand-file-name "cider" my-emacs-extension-dir)
+                (expand-file-name "init-cider-autoloads.el" my-emacs-config-dir))
+(require 'init-cider-autoloads)
+;; (load "init-cider-autoloads" t t)
 
 ;;; Code:
 (defun kj/clojure-hook ()

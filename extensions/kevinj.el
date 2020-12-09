@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; kevinj.el --- Config load when kevinj
 
 ;; Filename: kevinj.el
@@ -12,6 +13,12 @@
 (require 'projectile)
 
 ;;; Code:
+
+(defvar *w32-notification-id* 0)
+
+(defun kj/clean-notifies ()
+  (interactive)
+  (w32-notification-close *w32-notification-id*))
 
 ;; 设置窗口透明
 (setq alpha-list '((100 100) (95 65) (85 55) (75 45) (65 35)))
@@ -44,9 +51,14 @@
 (defun kj/insert-current-datetime ()
   "插入当前时间"
   (interactive)
-  (let ((current-date-time-format "%Y %b %d %H:%M:%S %a %Z"))
+  (let ((current-date-time-format "%Y-%m-%d %H:%M:%S"))
     (insert (format-time-string current-date-time-format))))
 
+(defun kj/insert-current-date ()
+  "插入当前时间"
+  (interactive)
+  (let ((current-date-time-format "%Y-%m-%d"))
+    (insert (format-time-string current-date-time-format))))
 
 (defun kj/copy-buffer-file-name ()
   (interactive)
@@ -120,6 +132,146 @@ BEG and END (region to sort)."
 
 (global-set-key (kbd "<M-S-up>") 'move-text-up)
 (global-set-key (kbd "<M-S-down>") 'move-text-down)
+
+(defun url-decode (s)
+  (decode-coding-string (url-unhex-string s) 'utf-8))
+
+(defun url-encode (s)
+  (url-hexify-string s))
+
+
+(defun kj/sync-to-remote ()
+  (interactive)
+  (when (and (boundp 'project-enable-remote) project-enable-remote)
+    (let* ((relative-path (s-replace
+                           (or (ignore-errors (projectile-project-root)) "")
+                           "" buffer-file-name))
+           (default-directory (file-name-as-directory (projectile-project-root)))
+           (buf-name (format "*[scp %s]*" (projectile-project-root)))
+           (buffer (get-buffer-create buf-name)))
+      (when (not (buffer-live-p buffer))
+        (with-current-buffer buffer
+			    (comint-mode)
+			    (goto-char (point-max))
+			    (insert (format "working dir at %s\n" default-directory))
+			    (display-buffer buffer)
+			    (set-terminal-coding-system 'utf-8)
+			    (set-buffer-file-coding-system 'utf-8)))
+      (with-current-buffer buffer
+        (goto-char (point-max))
+        (kj/insert-current-datetime))
+      (set-process-sentinel
+       (start-process buf-name buffer "C:/Program Files/Git/usr/bin/scp.exe"
+                      buffer-file-name
+                      (format "%s@%s:%s/%s"
+                              remote-user
+                              remote-host
+                              remote-path
+                              relative-path))
+       (lambda (process event)
+         (message "%s %s uploaded"
+                  (format-time-string "%Y-%m-%d %H:%M:%S")
+                  relative-path))))))
+
+(add-hook 'after-save-hook 'kj/sync-to-remote)
+
+
+(defun kj/flask-buffer-name (dir)
+  (format "*flask[%s]*" dir))
+
+(defun kj/flask-buffer (dir)
+  (get-buffer-create (kj/flask-buffer-name dir)))
+
+(defun kj/flask-buffer-process (dir)
+  (let ((buffer (kj/flask-buffer dir)))
+    (get-buffer-process buffer)))
+
+(defun kj/flask-run-server ()
+	(interactive)
+	(let* ((default-directory (projectile-project-root))
+				 (buf-name (kj/flask-buffer-name default-directory))
+				 (buffer (kj/flask-buffer default-directory)))
+		(with-current-buffer buffer
+			(comint-mode)
+			(goto-char (point-max))
+			(insert (format "working dir at %s\n" default-directory))
+			(display-buffer buffer)
+			(set-terminal-coding-system 'utf-8)
+			(when (process-live-p *flask-server-proc*)
+				(set-buffer-process-coding-system 'utf-8 'utf-8))
+			(set-buffer-file-coding-system 'utf-8))
+		(start-process buf-name buffer "python" "-u" "app/server.py")))
+
+(defun kj/flask-stop-server ()
+	(interactive)
+  (let ((default-directory (projectile-project-root))
+        (proc (kj/flask-buffer-process default-directory)))
+	  (when (process-live-p proc)
+		  (kill-process proc))))
+
+(defun kj/flask-restart-server ()
+	(interactive)
+  (let ((default-directory (projectile-project-root))
+        (proc (kj/flask-buffer-process default-directory)))
+	  (kj/flask-stop-server)
+    (kj/flask-run-server)))
+
+(defun kj/vue-buffer-name (dir)
+  (format "*vue[%s]*" dir))
+
+(defun kj/vue-buffer (dir)
+  (get-buffer-create (kj/vue-buffer-name dir)))
+
+(defun kj/vue-buffer-process (dir)
+  (get-buffer-process (kj/vue-buffer dir)))
+
+(defun kj/vue-dir ()
+  (if (and (boundp 'project-vue-dir) project-vue-dir)
+      (file-name-as-directory
+       (expand-file-name project-vue-dir (projectile-project-root)))
+    (projectile-project-root)))
+
+(defun kj/vue-run-server ()
+	(interactive)
+	(let* ((default-directory (kj/vue-dir))
+				 (buf-name (kj/vue-buffer-name default-directory))
+				 (buffer (kj/vue-buffer default-directory)))
+		(with-current-buffer buffer
+			(comint-mode)
+			(goto-char (point-max))
+			(insert (format "working dir at %s\n" default-directory))
+			(display-buffer buffer)
+			(set-terminal-coding-system 'utf-8)
+			(when (process-live-p *vue-server-proc*)
+				(set-buffer-process-coding-system 'utf-8 'utf-8))
+			(set-buffer-file-coding-system 'utf-8))
+		(start-process buf-name buffer "npm" "run" "serve")))
+
+(defun kj/vue-stop-server ()
+	(interactive)
+  (let* ((proc (kj/vue-buffer-process (kj/vue-dir))))
+	  (when (process-live-p proc)
+      (kill-process proc))))
+
+(defun kj/vue-restart-server ()
+	(interactive)
+  (kj/vue-stop-server)
+  (kj/vue-run-server))
+
+(defun kj/vue-build ()
+  (interactive)
+  (when (> *w32-notification-id* 0)
+    (w32-notification-close *w32-notification-id*))
+  (let* ((default-directory (kj/vue-dir)))
+    (set-process-sentinel
+     (start-process "npm" "*npm run build*" "npm" "run" "build")
+     (lambda (process event)
+       (setq *w32-notification-id*
+             (w32-notification-notify
+              :title "npm run build"
+              :body (format "%s" event)))))))
+
+
 
 (provide 'kevinj)
 

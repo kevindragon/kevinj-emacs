@@ -17,10 +17,11 @@
  package--init-file-ensured t)
 
 (defvar my-emacs-config-dir
-  (expand-file-name "config" user-emacs-directory))
+  (file-name-as-directory (expand-file-name "config" user-emacs-directory)))
 (defvar my-emacs-extension-dir
-  (expand-file-name "extensions" user-emacs-directory))
-(defvar my-emacs-theme-dir (expand-file-name "themes" user-emacs-directory))
+  (file-name-as-directory (expand-file-name "extensions" user-emacs-directory)))
+(defvar my-emacs-theme-dir
+  (file-name-as-directory (expand-file-name "themes" user-emacs-directory)))
 
 (defvar my-workspace-dir
   (if (string-equal system-type "windows-nt")
@@ -37,9 +38,12 @@
 (add-to-list 'load-path my-emacs-config-dir)
 (add-to-list 'load-path my-emacs-extension-dir)
 
+(setq gc-cons-threshold 100000000)
+(setq read-process-output-max (* 1024 1024))
+
 (let (
       ;; 加载的时候临时增大`gc-cons-threshold'以加速启动速度。
-      (gc-cons-threshold most-positive-fixnum)
+      ;; (gc-cons-threshold most-positive-fixnum)
       (gc-cons-percentage 0.6)
       ;; 清空避免加载远程文件的时候分析文件。
       (file-name-handler-alist nil))
@@ -108,6 +112,7 @@
     (require 'init-docker)
     (require 'init-shell)
     ))
+
 (put 'erase-buffer 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 (custom-set-variables
@@ -115,10 +120,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(lsp-enable-file-watchers t)
- '(lsp-file-watch-threshold 500)
  '(lsp-keep-workspace-alive nil)
- '(package-selected-packages '(hydra)))
+ '(lsp-ui-doc-position 'at-point)
+ '(safe-local-variable-values
+   '((project-vue-dir . "www")
+     (project-vue-dir "www")
+     (remote-path . "/home/solr/solr-ga/solr_ltr/solr_ltr_kevin")
+     (remote-user . "solr")
+     (remote-host . "192.168.2.27")
+     (project-enable-remote . t))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

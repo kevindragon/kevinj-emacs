@@ -19,25 +19,31 @@
 ;;
 
 ;;; Require
-
 (add-extension-dir "lsp-mode")
+(add-extension-dir "lsp-mode/clients")
 (add-extension-dir "dap-mode")
 (add-extension-dir "lsp-ui")
 
-(require 'init-lsp-autoloads)
-(require 'init-dap-autoloads)
-(require 'lsp-ui)
+(init-autoloads (expand-file-name "lsp-mode" my-emacs-extension-dir)
+                (expand-file-name "init-lsp-autoloads.el" my-emacs-config-dir))
+(load "init-lsp-autoloads.el")
+
+(init-autoloads (expand-file-name "dap-mode" my-emacs-extension-dir)
+                (expand-file-name "init-dap-autoloads.el" my-emacs-config-dir))
+(load "init-dap-autoloads.el")
+
+(init-autoloads (expand-file-name "lsp-ui" my-emacs-extension-dir)
+                (expand-file-name "init-lsp-ui-autoloads.el" my-emacs-config-dir))
+(load "init-lsp-ui-autoloads.el")
 
 ;;; Code:
 
 (custom-set-variables
  ;; '(lsp-signature-render-documentation nil)
  ;; '(lsp-ui-doc-alignment 'frame)
- ;; '(lsp-ui-doc-position 'at-point)
+ '(lsp-ui-doc-position 'at-point)
  ;; '(lsp-ui-doc-include-signature t)
  ;; '(lsp-ui-sideline-show-diagnostics nil)
- '(lsp-enable-file-watchers t)
- '(lsp-file-watch-threshold 500)
  '(lsp-keep-workspace-alive nil)
  )
 

@@ -10,7 +10,8 @@
 (add-extension-dir "cargo.el")
 (require 'rust-mode)
 (require 'cargo)
-(require 'lsp-mode)
+(with-eval-after-load "lsp-mode"
+  (add-to-list 'lsp-enabled-clients 'rust-analyzer))
 
 ;;; Code:
 (defun kj/rust-actix-run-dev (port)

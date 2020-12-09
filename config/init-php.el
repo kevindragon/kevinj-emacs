@@ -7,7 +7,10 @@
 
 ;;; Require
 (add-extension-dir "php-mode")
-(load "php-mode-autoloads.el")
+(let ((autoloads-fname "init-php-mode-autoloads.el"))
+  (init-autoloads (expand-file-name "php-mode" my-emacs-extension-dir)
+                  (expand-file-name autoloads-fname my-emacs-config-dir))
+  (load autoloads-fname))
 
 (add-extension-dir "phpunit.el")
 (require 'phpunit)
@@ -40,7 +43,9 @@
     (file-name-sans-extension
      (file-name-nondirectory buffer-file-name))))
 
-(add-hook 'php-mode-hook #'lsp)
+(with-eval-after-load "lsp-mode"
+  (add-to-list 'lsp-enabled-clients 'iph))
+(add-hook 'php-mode-hook #'lsp-deferred)
 
 
 (provide 'init-php)

@@ -10,6 +10,9 @@
 (require 'typescript-mode)
 
 ;;; Code:
+(with-eval-after-load "lsp-mode"
+  (add-to-list 'lsp-enabled-clients 'ts-ls))
+
 (defun kj/ts-mode-hook ()
 	(lsp-deferred))
 

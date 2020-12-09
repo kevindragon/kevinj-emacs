@@ -1,10 +1,33 @@
-;;; php-mode-autoloads.el --- automatically extracted autoloads
-;;
+;;; init-php-mode-autoloads.el --- php mode autoloads  -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2020  Kevin Jiang
+
+;; Author: Kevin Jiang <wenlin1988@126.com>
+;; Keywords:
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; ;;
+
 ;;; Code:
 
-(add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory #$) (car load-path))))
 
+
+(provide 'init-php-mode-autoloads)
+;;; init-php-mode-autoloads.el ends here
 
 ;;;### (autoloads nil "../extensions/php-mode/php" "../extensions/php-mode/php.el"
 ;;;;;;  (0 0 0 0))
@@ -42,27 +65,6 @@ Find php.ini FILE by `php --ini'.
 \(fn &optional FILE)" t nil)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/php-mode/php" '("php-")))
-
-;;;***
-
-;;;### (autoloads nil "../extensions/php-mode/php-align" "../extensions/php-mode/php-align.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../extensions/php-mode/php-align.el
-
-(autoload 'php-align-setup "../extensions/php-mode/php-align" "\
-Setup alignment configuration for PHP code." nil nil)
-
-(autoload 'php-align-mode "../extensions/php-mode/php-align" "\
-Alignment lines for PHP script.
-
-If called interactively, enable Php-Align mode if ARG is
-positive, and disable it if ARG is zero or negative.  If called
-from Lisp, also enable the mode if ARG is omitted or nil, and
-toggle it if ARG is `toggle'; disable the mode otherwise.
-
-\(fn &optional ARG)" t nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/php-mode/php-align" '("php-align-")))
 
 ;;;***
 
@@ -218,10 +220,23 @@ Return path to current PHP project." nil nil)
 
 ;;;***
 
-;; Local Variables:
-;; version-control: never
-;; no-byte-compile: t
-;; no-update-autoloads: t
-;; coding: utf-8
-;; End:
-;;; php-mode-autoloads.el ends here
+;;;### (autoloads nil "../extensions/php-mode/php-align" "../extensions/php-mode/php-align.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/php-mode/php-align.el
+
+(autoload 'php-align-setup "../extensions/php-mode/php-align" "\
+Setup alignment configuration for PHP code." nil nil)
+
+(autoload 'php-align-mode "../extensions/php-mode/php-align" "\
+Alignment lines for PHP script.
+
+If called interactively, enable Php-Align mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+\(fn &optional ARG)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/php-mode/php-align" '("php-align-")))
+
+;;;***
