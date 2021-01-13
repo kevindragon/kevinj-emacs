@@ -280,3 +280,15 @@
 [submodule "extensions/company-posframe"]
 	path = extensions/company-posframe
 	url = https://github.com/tumashu/company-posframe.git
+[submodule "extensions/elpy"]
+	path = extensions/elpy
+	url = https://github.com/jorgenschaefer/elpy.git
+[submodule "extensions/elfeed"]
+	path = extensions/elfeed
+	url = https://github.com/skeeto/elfeed.git
+[submodule "extensions/htmlize"]
+	path = extensions/htmlize
+	url = https://github.com/hniksic/emacs-htmlize.git
+[submodule "extensions/hl-todo"]
+	path = extensions/hl-todo
+	url = https://github.com/tarsius/hl-todo.git

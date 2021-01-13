@@ -120,15 +120,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(lsp-keep-workspace-alive nil)
- '(lsp-ui-doc-position 'at-point)
- '(safe-local-variable-values
-   '((project-vue-dir . "www")
-     (project-vue-dir "www")
-     (remote-path . "/home/solr/solr-ga/solr_ltr/solr_ltr_kevin")
-     (remote-user . "solr")
-     (remote-host . "192.168.2.27")
-     (project-enable-remote . t))))
+
+ '(lsp-signature-render-documentation nil)
+ '(lsp-ui-doc-include-signature t)
+ '(lsp-ui-doc-position 'at-point))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

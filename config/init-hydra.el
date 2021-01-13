@@ -9,17 +9,21 @@
 (add-extension-dir "hydra")
 
 ;;; Code:
-(setq kj/hydra-autoload-file
-      (expand-file-name "init-hydra-autoloads.el" my-emacs-config-dir))
+;; (setq kj/hydra-autoload-file
+;;       (expand-file-name "init-hydra-autoloads.el" my-emacs-config-dir))
 
-(defun update-hydra-autoloads ()
-  "更新hydra的autoloads."
-  (add-autoloads (expand-file-name "hydra" my-emacs-extension-dir)
-                 kj/hydra-autoload-file))
+;; (defun update-hydra-autoloads ()
+;;   "更新hydra的autoloads."
+;;   (add-autoloads (expand-file-name "hydra" my-emacs-extension-dir)
+;;                  kj/hydra-autoload-file))
 
-(when (not (f-exists? kj/hydra-autoload-file))
-    (update-hydra-autoloads))
-(require 'init-hydra-autoloads)
+;; (when (not (f-exists? kj/hydra-autoload-file))
+;;     (update-hydra-autoloads))
+;; (require 'init-hydra-autoloads)
+
+(init-autoloads (expand-file-name "hydra" my-emacs-extension-dir)
+                (expand-file-name "init-hydra-autoloads.el" my-emacs-config-dir))
+(load "init-hydra-autoloads.el")
 
 
 (provide 'init-hydra)

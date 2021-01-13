@@ -1,33 +1,4 @@
-;;; init-magit-autoloads.el --- magit autoloads      -*- lexical-binding: t; -*-
-
-;; Copyright (C) 2020  Kevin Jiang
-
-;; Author: Kevin Jiang <wenlin1988@126.com>
-;; Keywords: 
-
-;; This program is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or
-;; (at your option) any later version.
-
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-;;; Commentary:
-
-;; 
-
-;;; Code:
-
-
-
-(provide 'init-magit-autoloads)
-;;; init-magit-autoloads.el ends here
+;;
 
 ;;;### (autoloads nil "../extensions/magit/lisp/git-rebase" "../extensions/magit/lisp/git-rebase.el"
 ;;;;;;  (0 0 0 0))
@@ -59,6 +30,50 @@ running 'man git-rebase' at the command line) for details.
 ;;;### (autoloads nil "../extensions/magit/lisp/magit" "../extensions/magit/lisp/magit.el"
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from ../extensions/magit/lisp/magit.el
+
+(define-obsolete-variable-alias 'global-magit-file-mode 'magit-define-global-key-bindings "Magit 3.0.0")
+
+(defvar magit-define-global-key-bindings t "\
+Whether to bind some Magit commands in the global keymap.
+
+If this variable is non-nil, then the following bindings may
+be added to the global keymap.  The default is t.
+
+key             binding
+---             -------
+C-x g           magit-status
+C-x M-g         magit-dispatch
+C-c M-g         magit-file-dispatch
+
+These bindings may be added when `after-init-hook' is called.
+Each binding is added if and only if at that time no other key
+is bound to the same command and no other command is bound to
+the same key.  In other words we try to avoid adding bindings
+that are unnecessary, as well as bindings that conflict with
+other bindings.
+
+Adding the above bindings is delayed until `after-init-hook'
+is called to allow users to set the variable anywhere in their
+init file (without having to make sure to do so before `magit'
+is loaded or autoloaded) and to increase the likelihood that
+all the potentially conflicting user bindings have already
+been added.
+
+Setting this variable after the hook has already been called
+has no effect.
+
+We recommend that you bind \"C-c g\" instead of \"C-c M-g\" to
+`magit-file-dispatch'.  The former is a much better binding
+but the \"C-c <letter>\" namespace is strictly reserved for
+users; preventing Magit from using it by default.
+
+Also see info node `(magit)Commands for Buffers Visiting Files'.")
+
+(custom-autoload 'magit-define-global-key-bindings "../extensions/magit/lisp/magit" t)
+
+(defun magit-maybe-define-global-key-bindings nil (when magit-define-global-key-bindings (let ((map (current-global-map))) (dolist (elt '(("C-x g" . magit-status) ("C-x M-g" . magit-dispatch) ("C-c M-g" . magit-file-dispatch))) (let ((key (kbd (car elt))) (def (cdr elt))) (unless (or (lookup-key map key) (where-is-internal def (make-sparse-keymap) t)) (define-key map key def)))))))
+
+(if after-init-time (magit-maybe-define-global-key-bindings) (add-hook 'after-init-hook 'magit-maybe-define-global-key-bindings t))
  (autoload 'magit-dispatch "magit" nil t)
  (autoload 'magit-run "magit" nil t)
 
@@ -195,7 +210,7 @@ This command starts such a bisect session by asking for a know
 good and a bad commit.  To move the session forward use the
 other actions from the bisect transient command (\\<magit-status-mode-map>\\[magit-bisect]).
 
-\(fn BAD GOOD)" t nil)
+\(fn BAD GOOD ARGS)" t nil)
 
 (autoload 'magit-bisect-reset "../extensions/magit/lisp/magit-bisect" "\
 After bisecting, cleanup bisection state and return to original `HEAD'." t nil)
@@ -222,7 +237,7 @@ Unlike `git bisect run' this can be used before bisecting has
 begun.  In that case it behaves like `git bisect start; git
 bisect run'.
 
-\(fn CMDLINE &optional BAD GOOD)" t nil)
+\(fn CMDLINE &optional BAD GOOD ARGS)" t nil)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-bisect" '("magit-")))
 
@@ -567,6 +582,11 @@ that is you) or committer date is available as the previous
 history element.
 
 \(fn DATE)" t nil)
+
+(autoload 'magit-commit-absorb-modules "../extensions/magit/lisp/magit-commit" "\
+Spread modified modules across recent commits.
+
+\(fn PHASE COMMIT)" t nil)
  (autoload 'magit-commit-absorb "magit-commit" nil t)
  (autoload 'magit-commit-autofixup "magit-commit" nil t)
 
@@ -1076,30 +1096,6 @@ the line and column corresponding to that location.
 \(fn REV FILE)" t nil)
  (autoload 'magit-file-dispatch "magit" nil t)
 
-(put 'global-magit-file-mode 'globalized-minor-mode t)
-
-(defvar global-magit-file-mode t "\
-Non-nil if Global Magit-File mode is enabled.
-See the `global-magit-file-mode' command
-for a description of this minor mode.
-Setting this variable directly does not take effect;
-either customize it (see the info node `Easy Customization')
-or call the function `global-magit-file-mode'.")
-
-(custom-autoload 'global-magit-file-mode "../extensions/magit/lisp/magit-files" nil)
-
-(autoload 'global-magit-file-mode "../extensions/magit/lisp/magit-files" "\
-Toggle Magit-File mode in all buffers.
-With prefix ARG, enable Global Magit-File mode if ARG is positive;
-otherwise, disable it.  If called from Lisp, enable the mode if
-ARG is omitted or nil.
-
-Magit-File mode is enabled in all buffers where
-`magit-file-mode-turn-on' would do it.
-See `magit-file-mode' for more information on Magit-File mode.
-
-\(fn &optional ARG)" t nil)
-
 (autoload 'magit-blob-visit-file "../extensions/magit/lisp/magit-files" "\
 View the file from the worktree corresponding to the current blob.
 When visiting a blob or the version from the index, then go to
@@ -1358,6 +1354,17 @@ https://github.com/mhagger/git-when-merged.
 Move to the Nth parent of the current commit.
 
 \(fn &optional N)" t nil)
+ (autoload 'magit-shortlog "magit-log" nil t)
+
+(autoload 'magit-shortlog-since "../extensions/magit/lisp/magit-log" "\
+Show a history summary for commits since REV.
+
+\(fn REV ARGS)" t nil)
+
+(autoload 'magit-shortlog-range "../extensions/magit/lisp/magit-log" "\
+Show a history summary for commit or range REV-OR-RANGE.
+
+\(fn REV-OR-RANGE ARGS)" t nil)
 
 (autoload 'magit-cherry "../extensions/magit/lisp/magit-log" "\
 Show commits in a branch that are not merged in the upstream branch.
@@ -1515,7 +1522,7 @@ same differences as those shown in the buffer are always used.
 \(fn FILE &optional ARG)" t nil)
 
 (autoload 'magit-request-pull "../extensions/magit/lisp/magit-patch" "\
-Request upstream to pull from you public repository.
+Request upstream to pull from your public repository.
 
 URL is the url of your publicly accessible repository.
 START is a commit that already is in the upstream repository.
@@ -1603,22 +1610,7 @@ Push a tag to another repository.
 Push a notes ref to another repository.
 
 \(fn REF REMOTE &optional ARGS)" t nil)
-
-(autoload 'magit-push-implicitly "../extensions/magit/lisp/magit-push" "\
-Push somewhere without using an explicit refspec.
-
-This command simply runs \"git push -v [ARGS]\".  ARGS are the
-arguments specified in the popup buffer.  No explicit refspec
-arguments are used.  Instead the behavior depends on at least
-these Git variables: `push.default', `remote.pushDefault',
-`branch.<branch>.pushRemote', `branch.<branch>.remote',
-`branch.<branch>.merge', and `remote.<remote>.push'.
-
-The function `magit-push-implicitly--desc' attempts to predict
-what this command will do.  The value it returns is displayed in
-the popup buffer.
-
-\(fn ARGS)" t nil)
+ (autoload 'magit-push-implicitly "magit-push" nil t)
 
 (autoload 'magit-push-to-remote "../extensions/magit/lisp/magit-push" "\
 Push to REMOTE without using an explicit refspec.
@@ -1823,7 +1815,7 @@ With a prefix argument reset the working tree otherwise don't.
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from ../extensions/magit/lisp/magit-section.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-section" '("magit-")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/magit/lisp/magit-section" '("isearch-clean-overlays@magit-mode" "magit-")))
 
 ;;;***
 
@@ -2362,6 +2354,35 @@ See info node `(magit)Debugging Tools' for more information." t nil)
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from ../extensions/magit/lisp/magit-wip.el
 
+(defvar magit-wip-mode nil "\
+Non-nil if Magit-Wip mode is enabled.
+See the `magit-wip-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `magit-wip-mode'.")
+
+(custom-autoload 'magit-wip-mode "../extensions/magit/lisp/magit-wip" nil)
+
+(autoload 'magit-wip-mode "../extensions/magit/lisp/magit-wip" "\
+Save uncommitted changes to work-in-progress refs.
+
+If called interactively, enable Magit-Wip mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+Whenever appropriate (i.e. when dataloss would be a possibility
+otherwise) this mode causes uncommitted changes to be committed
+to dedicated work-in-progress refs.
+
+For historic reasons this mode is implemented on top of four
+other `magit-wip-*' modes, which can also be used individually,
+if you want finer control over when the wip refs are updated;
+but that is discouraged.
+
+\(fn &optional ARG)" t nil)
+
 (put 'magit-wip-after-save-mode 'globalized-minor-mode t)
 
 (defvar magit-wip-after-save-mode nil "\
@@ -2481,8 +2502,8 @@ Move WORKTREE to PATH.
 
 ;;;***
 
-;;;### (autoloads nil nil ("../extensions/magit/lisp/magit-core.el")
-;;;;;;  (0 0 0 0))
+;;;### (autoloads nil nil ("../extensions/magit/lisp/magit-core.el"
+;;;;;;  "../extensions/magit/lisp/magit-pkg.el") (0 0 0 0))
 
 ;;;***
 

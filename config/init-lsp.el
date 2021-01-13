@@ -38,13 +38,16 @@
 
 ;;; Code:
 
+(with-eval-after-load 'lsp-ui-doc
+  (lsp-ui-doc-frame-mode +1))
+
 (custom-set-variables
- ;; '(lsp-signature-render-documentation nil)
+ '(lsp-signature-render-documentation nil)
  ;; '(lsp-ui-doc-alignment 'frame)
  '(lsp-ui-doc-position 'at-point)
- ;; '(lsp-ui-doc-include-signature t)
+ ;; '(lsp-ui-doc-include-signature nil)
  ;; '(lsp-ui-sideline-show-diagnostics nil)
- '(lsp-keep-workspace-alive nil)
+ ;; '(lsp-keep-workspace-alive nil)
  )
 
 (add-hook 'dap-stopped-hook

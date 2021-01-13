@@ -277,7 +277,12 @@ If region is active, normalize the region and shift."
     (define-key map (kbd "<C-return>") 'elpy-shell-send-statement-and-step)
     (define-key map (kbd "C-c C-e") 'elpy-shell-send-statement-and-go)
     (define-key inferior-python-mode-map (kbd "C-c C-z") 'elpy-shell-switch-to-buffer)
-    map))
+    map)
+
+  (make-variable-buffer-local 'python-shell-buffer-name)
+  (setq python-shell-buffer-name (format "Python shell %s"
+                                         (projectile-project-name)))
+  )
 
 (setq python-shell-interpreter "ipython"
       python-shell-interpreter-args "-i --simple-prompt --profile=dev"

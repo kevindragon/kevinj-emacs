@@ -11,7 +11,12 @@
 (add-extension-dir "magit/lisp")
 (add-extension-dir "magit-popup")
 
-(require 'init-magit-autoloads)
+;; (require 'init-magit-autoloads)
+
+(let ((autoloads-fname "init-magit-autoloads.el"))
+  (init-autoloads (expand-file-name "magit/lisp" my-emacs-extension-dir)
+                  (expand-file-name autoloads-fname my-emacs-config-dir))
+  (load autoloads-fname))
 
 ;;; Code:
 

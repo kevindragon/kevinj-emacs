@@ -11,6 +11,9 @@
 
 (require 'dap-java)
 
+(with-eval-after-load "lsp-mode"
+  (add-to-list 'lsp-enabled-clients 'jdtls))
+
 ;;; Code:
 (defun kj/java-mode-hook ()
   (setq mode-name "Ⓙ")

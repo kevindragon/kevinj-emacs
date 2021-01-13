@@ -8,8 +8,13 @@
 ;;; Require
 
 (add-extension-dir "projectile")
-(require 'init-projectile-autoloads)
+;; (require 'init-projectile-autoloads)
 ;; (require 'projectile)
+
+(let ((autoloads-fname "init-projectile-autoloads.el"))
+  (init-autoloads (expand-file-name "projectile" my-emacs-extension-dir)
+                  (expand-file-name autoloads-fname my-emacs-config-dir))
+  (load autoloads-fname))
 
 ;;; Code:
 

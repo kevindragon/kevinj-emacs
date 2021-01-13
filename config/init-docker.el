@@ -11,6 +11,8 @@
 
 (add-extension-dir "tablist")
 (add-extension-dir "docker.el")
+(init-autoloads (expand-file-name "docker.el" my-emacs-extension-dir)
+                (expand-file-name "init-docker-autoloads.el" my-emacs-config-dir))
 (require 'init-docker-autoloads)
 
 ;;; Code:

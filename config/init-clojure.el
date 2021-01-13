@@ -17,8 +17,8 @@
 (add-extension-dir "cider")
 (init-autoloads (expand-file-name "cider" my-emacs-extension-dir)
                 (expand-file-name "init-cider-autoloads.el" my-emacs-config-dir))
-(require 'init-cider-autoloads)
-;; (load "init-cider-autoloads" t t)
+(load "init-cider-autoloads.el")
+;; (require 'init-cider-autoloads)
 
 ;;; Code:
 (defun kj/clojure-hook ()

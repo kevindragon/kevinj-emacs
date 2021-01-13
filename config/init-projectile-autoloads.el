@@ -1,33 +1,4 @@
-;;; init-projectile-autoloads.el --- autoloads for projectile  -*- lexical-binding: t; -*-
-
-;; Copyright (C) 2020  Kevin Jiang
-
-;; Author: Kevin Jiang <wenlin1988@126.com>
-;; Keywords: 
-
-;; This program is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or
-;; (at your option) any later version.
-
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-;;; Commentary:
-
-;; 
-
-;;; Code:
-
-
-
-(provide 'init-projectile-autoloads)
-;;; init-projectile-autoloads.el ends here
+;;
 
 ;;;### (autoloads nil "../extensions/projectile/projectile" "../extensions/projectile/projectile.el"
 ;;;;;;  (0 0 0 0))
@@ -347,7 +318,7 @@ Switch to the project specific shell buffer if it already exists.
 
 Use a prefix argument ARG to indicate creation of a new process instead.
 
-\(fn ARG)" t nil)
+\(fn &optional ARG)" t nil)
 
 (autoload 'projectile-run-eshell "../extensions/projectile/projectile" "\
 Invoke `eshell' in the project's root.
@@ -356,7 +327,7 @@ Switch to the project specific eshell buffer if it already exists.
 
 Use a prefix argument ARG to indicate creation of a new process instead.
 
-\(fn ARG)" t nil)
+\(fn &optional ARG)" t nil)
 
 (autoload 'projectile-run-ielm "../extensions/projectile/projectile" "\
 Invoke `ielm' in the project's root.
@@ -365,7 +336,7 @@ Switch to the project specific ielm buffer if it already exists.
 
 Use a prefix argument ARG to indicate creation of a new process instead.
 
-\(fn ARG)" t nil)
+\(fn &optional ARG)" t nil)
 
 (autoload 'projectile-run-term "../extensions/projectile/projectile" "\
 Invoke `term' in the project's root.
@@ -374,7 +345,7 @@ Switch to the project specific term buffer if it already exists.
 
 Use a prefix argument ARG to indicate creation of a new process instead.
 
-\(fn ARG)" t nil)
+\(fn &optional ARG)" t nil)
 
 (autoload 'projectile-run-vterm "../extensions/projectile/projectile" "\
 Invoke `vterm' in the project's root.

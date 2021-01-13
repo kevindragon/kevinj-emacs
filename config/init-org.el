@@ -13,6 +13,12 @@
 (add-extension-dir "org-pomodoro")
 (require 'org-pomodoro)
 
+(require 'ob-eshell)
+(require 'ob-python)
+
+(add-extension-dir "htmlize")
+(require 'htmlize)
+
 ;;; Code:
 (setq org-directory (concat my-workspace-dir "/orgs"))
 (setq org-agenda-files (list (concat my-workspace-dir "/orgs/todo.org")

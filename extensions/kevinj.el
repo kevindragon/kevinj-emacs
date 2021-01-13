@@ -169,9 +169,10 @@ BEG and END (region to sort)."
                               remote-path
                               relative-path))
        (lambda (process event)
-         (message "%s %s uploaded"
+         (message "%s %s uploaded, %s"
                   (format-time-string "%Y-%m-%d %H:%M:%S")
-                  relative-path))))))
+                  relative-path
+                  (s-trim event)))))))
 
 (add-hook 'after-save-hook 'kj/sync-to-remote)
 
@@ -197,8 +198,6 @@ BEG and END (region to sort)."
 			(insert (format "working dir at %s\n" default-directory))
 			(display-buffer buffer)
 			(set-terminal-coding-system 'utf-8)
-			(when (process-live-p *flask-server-proc*)
-				(set-buffer-process-coding-system 'utf-8 'utf-8))
 			(set-buffer-file-coding-system 'utf-8))
 		(start-process buf-name buffer "python" "-u" "app/server.py")))
 
@@ -270,6 +269,15 @@ BEG and END (region to sort)."
              (w32-notification-notify
               :title "npm run build"
               :body (format "%s" event)))))))
+
+
+(defun kj/pip-install ()
+  (interactive)
+  (let ((name (read-string "Type package name: ")))
+    (set-process-sentinel
+     (start-process "pip" "*kj/pip*" "pip" "install" name)
+     (lambda (process event)
+       (message "%s %s" process event)))))
 
 
 
