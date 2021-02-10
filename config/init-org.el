@@ -87,6 +87,40 @@
 ;; (add-hook 'org-agenda-finalize-hook #'kj/org-agenda-time-grid-spacing)
 
 
+;;; 我的博客配置
+(require 'ox-publish)
+(setq
+ org-publish-project-alist
+ '(("blog-notes"
+    :base-directory "c:/workspace/orgs/knowledge-base"
+    :base-extension "org"
+    :publishing-directory "c:/workspace/orgs/knowledge-base-html/"
+    :recursive t
+    :publishing-function org-html-publish-to-html
+    :headline-levels 4
+    :auto-preamble t
+    :section-numbers nil
+    :author "KevinJiang"
+    :email "wenlin1988@126.com"
+    :auto-sitemap t
+    :sitemap-filename "sitemap.org"
+    :sitemap-title "Sitemap"
+    :sitemap-sort-files anti-chronologically
+    :sitemap-file-entry-format "%d %t"
+    )
+
+   ("blog-static"
+    :base-directory "c:/workspace/orgs/knowledge-base"
+    :base-extension "css|js|png|jpg|gif|pdf|mp3|ogg|swf"
+    :publishing-directory "c:/workspace/orgs/knowledge-base-html"
+    :recursive t
+    :publishing-function org-publish-attachment
+    )
+
+   ("blog" :components ("blog-notes" "blog-static"))
+   ))
+
+
 (provide 'init-org)
 
 ;;; init-org.el ends here

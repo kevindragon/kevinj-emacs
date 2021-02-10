@@ -15,6 +15,10 @@
 (setq plantuml-jar-path "c:/software/plantuml.jar")
 (setq plantuml-default-exec-mode 'jar)
 
+(setq org-plantuml-jar-path plantuml-jar-path)
+(add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
+(org-babel-do-load-languages 'org-babel-load-languages '((plantuml . t)))
+
 ;; Sample executable configuration
 ;; (setq plantuml-executable-path "/path/to/your/copy/of/plantuml.bin")
 ;; (setq plantuml-default-exec-mode 'executable)

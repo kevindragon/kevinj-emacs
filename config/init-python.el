@@ -52,13 +52,13 @@
 (defun my-python-hook ()
   (set (make-local-variable 'forward-sexp-function) nil)
   ;;; ipython
-  (setq python-shell-interpreter "ipython"
-        python-shell-interpreter-args "-i --simple-prompt --profile=dev"
-        python-shell-interpreter-interactive-arg "-i --simple-prompt")
+  ;; (setq python-shell-interpreter "ipython"
+  ;;       python-shell-interpreter-args "-i --simple-prompt --profile=dev"
+  ;;       python-shell-interpreter-interactive-arg "-i --simple-prompt")
   ;;; jupyter
-  ;; (setq python-shell-interpreter "jupyter"
-  ;;       python-shell-interpreter-args "console --simple-prompt"
-  ;;       python-shell-prompt-detect-failure-warning nil)
+  (setq python-shell-interpreter "jupyter"
+        python-shell-interpreter-args "console --simple-prompt"
+        python-shell-prompt-detect-failure-warning nil)
   ;; (add-to-list 'python-shell-completion-native-disabled-interpreters
   ;;              "jupyter")
   ;; 启动symbol-overlay-mode
@@ -96,26 +96,26 @@
   (interactive "fFilename: \nsArgs: ")
   (let* ((default-directory (projectile-project-root))
          (filename (file-relative-name filename default-directory))
-		 (buf-name (format "*python[%s/%s]*" (projectile-project-name) filename))
-		 (buffer (get-buffer-create buf-name)))
-	(with-current-buffer buffer
-	  (comint-mode)
-	  (goto-char (point-max))
-	  (insert (format "working dir: %s\n" default-directory))
+		     (buf-name (format "*python[%s/%s]*" (projectile-project-name) filename))
+		     (buffer (get-buffer-create buf-name)))
+	  (with-current-buffer buffer
+	    (comint-mode)
+	    (goto-char (point-max))
+	    (insert (format "working dir: %s\n" default-directory))
       (insert (format "cmd: python -u %s %s\n" filename args))
-      (display-buffer-in-side-window buffer '((side . bottom) (slot . 0)))
-	  (set-terminal-coding-system 'utf-8)
-	  (set-buffer-file-coding-system 'utf-8))
-	(start-process buf-name buffer "python" "-u" filename args)))
+      (display-buffer-in-side-window buffer '((side . bottom) (slot . 1)))
+	    (set-terminal-coding-system 'utf-8)
+	    (set-buffer-file-coding-system 'utf-8))
+	  (start-process buf-name buffer "python" "-u" filename args)))
 
 (defun kj/display-python-shell (buf-name)
   "在side window ((side . bottom) (slot . 1))显示Python shell."
   (interactive (list (completing-read
                       "Select a buffer:"
-                      (-filter (lambda (x) (string-prefix-p "*Python " x))
+                      (-filter (lambda (x) (string-prefix-p "*Python shell " x))
                                (mapcar 'buffer-name (buffer-list))))))
   (let ((buf (get-buffer buf-name)))
-    (display-buffer-in-side-window buf '((side . bottom) (slot . 1)))
+    (display-buffer-in-side-window buf '((side . bottom) (slot . 0)))
     (switch-to-buffer-other-window buf)))
 
 (global-set-key (kbd "<f3>") 'window-toggle-side-windows)

@@ -76,6 +76,8 @@
     (require 'init-org)
     ;; (require 'init-org-roam)
 
+    (require 'init-prog)
+
     (require 'init-magit)
 
     (require 'init-company)
@@ -120,10 +122,19 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-
+ '(lsp-headerline-breadcrumb-enable nil)
  '(lsp-signature-render-documentation nil)
  '(lsp-ui-doc-include-signature t)
- '(lsp-ui-doc-position 'at-point))
+ '(lsp-ui-doc-position 'at-point)
+ '(lsp-ui-doc-show-with-cursor nil)
+ '(safe-local-variable-values
+   '((project-enable-remote . t)
+     (remote-path . "/data/sdb/kevin/workspace/lnip_backend_semantic_analysis")
+     (remote-user . "tpo")
+     (remote-host . "10.123.4.230")
+     (remote-path . "")
+     (remote-user . "")
+     (remote-host . ""))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

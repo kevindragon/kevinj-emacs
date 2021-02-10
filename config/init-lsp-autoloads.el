@@ -55,9 +55,42 @@ Narrow to the symbol range on breadcrumb at SYMBOL-POSITION.
 
 ;;;***
 
+;;;### (autoloads nil "../extensions/lsp-mode/lsp-icons" "../extensions/lsp-mode/lsp-icons.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/lsp-mode/lsp-icons.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-icons" '("lsp-")))
+
+;;;***
+
+;;;### (autoloads nil "../extensions/lsp-mode/lsp-iedit" "../extensions/lsp-mode/lsp-iedit.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../extensions/lsp-mode/lsp-iedit.el
+
+(autoload 'lsp-iedit-highlights "../extensions/lsp-mode/lsp-iedit" "\
+Start an `iedit' operation on the documentHighlights at point.
+This can be used as a primitive `lsp-rename' replacement if the
+language server doesn't support renaming.
+
+See also `lsp-enable-symbol-highlighting'." t nil)
+
+(autoload 'lsp-evil-multiedit-highlights "../extensions/lsp-mode/lsp-iedit" "\
+Start an `evil-multiedit' operation on the documentHighlights at point.
+This can be used as a primitive `lsp-rename' replacement if the
+language server doesn't support renaming.
+
+See also `lsp-enable-symbol-highlighting'." t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-iedit" '("lsp-iedit--on-ranges")))
+
+;;;***
+
 ;;;### (autoloads nil "../extensions/lsp-mode/lsp-lens" "../extensions/lsp-mode/lsp-lens.el"
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from ../extensions/lsp-mode/lsp-lens.el
+
+(autoload 'lsp-lens--enable "../extensions/lsp-mode/lsp-lens" "\
+Enable lens mode." nil nil)
 
 (autoload 'lsp-lens-show "../extensions/lsp-mode/lsp-lens" "\
 Display lenses in the buffer." t nil)
@@ -155,6 +188,41 @@ mode otherwise.
 ;;; Generated autoloads from ../extensions/lsp-mode/lsp-protocol.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-protocol" '("dash-expand:&RangeToPoint" "lsp")))
+
+;;;***
+
+;;;### (autoloads nil "../extensions/lsp-mode/lsp-semantic-tokens"
+;;;;;;  "../extensions/lsp-mode/lsp-semantic-tokens.el" (0 0 0 0))
+;;; Generated autoloads from ../extensions/lsp-mode/lsp-semantic-tokens.el
+
+(autoload 'lsp--semantic-tokens-initialize-buffer "../extensions/lsp-mode/lsp-semantic-tokens" "\
+Initialize the buffer for semantic tokens.
+IS-RANGE-PROVIDER is non-nil when server supports range requests.
+
+\(fn IS-RANGE-PROVIDER)" nil nil)
+
+(autoload 'lsp--semantic-tokens-initialize-workspace "../extensions/lsp-mode/lsp-semantic-tokens" "\
+Initialize semantic tokens for WORKSPACE.
+
+\(fn WORKSPACE)" nil nil)
+
+(autoload 'lsp-semantic-tokens--warn-about-deprecated-setting "../extensions/lsp-mode/lsp-semantic-tokens" "\
+Warn about deprecated semantic highlighting variable." nil nil)
+
+(autoload 'lsp-semantic-tokens--enable "../extensions/lsp-mode/lsp-semantic-tokens" "\
+Enable semantic tokens mode." nil nil)
+
+(autoload 'lsp-semantic-tokens-mode "../extensions/lsp-mode/lsp-semantic-tokens" "\
+Toggle semantic-tokens support.
+
+If called interactively, enable Lsp-Semantic-Tokens mode if ARG
+is positive, and disable it if ARG is zero or negative.  If
+called from Lisp, also enable the mode if ARG is omitted or nil,
+and toggle it if ARG is `toggle'; disable the mode otherwise.
+
+\(fn &optional ARG)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "../extensions/lsp-mode/lsp-semantic-tokens" '("lsp-")))
 
 ;;;***
 

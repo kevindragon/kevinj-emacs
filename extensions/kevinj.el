@@ -174,6 +174,12 @@ BEG and END (region to sort)."
                   relative-path
                   (s-trim event)))))))
 
+(custom-set-variables
+ '(safe-local-variable-values
+   '((remote-path . "")
+     (remote-user . "")
+     (remote-host . ""))))
+
 (add-hook 'after-save-hook 'kj/sync-to-remote)
 
 
@@ -271,16 +277,120 @@ BEG and END (region to sort)."
               :body (format "%s" event)))))))
 
 
-(defun kj/pip-install ()
-  (interactive)
-  (let ((name (read-string "Type package name: ")))
-    (set-process-sentinel
-     (start-process "pip" "*kj/pip*" "pip" "install" name)
-     (lambda (process event)
-       (message "%s %s" process event)))))
+;;; npm
+(defcustom kj/npm-buffer-name "*npm kj*"
+  "docker命令运行的buffer name."
+  :group 'kj/npm
+  :type 'string)
+
+(defun kj/npm-buf ()
+  (get-buffer-create kj/npm-buffer-name))
+
+(defun kj/npm--show-side-window ()
+  (let ((buf (kj/npm-buf)))
+    (display-buffer-in-side-window buf '((side . bottom) (slot . 1)))
+    (with-current-buffer buf
+      (goto-char (point-max))
+		  (set-window-point (get-buffer-window buf) (point-max)))))
+
+(defun kj/npm-update (pkg-name)
+  (interactive "sPackage name: ")
+  (let* ((global (y-or-n-p "Update globally installed packages?"))
+         (opts (if global "-g" nil)))
+    (start-process "npm" (kj/npm-buf) "npm" "update" opts pkg-name)
+    (kj/npm--show-side-window)))
 
 
+(defun kj/pip-install ()
+  (interactive)
+  (let* ((name (read-string "Type package name: "))
+         (buf (get-buffer-create "*kj/pip*")))
+    (start-process "pip" buf "pip" "install" name)
+    (display-buffer-in-side-window buf '((side . bottom) (slot . 1)))))
 
+
+(defun kj/display-shell (buf-name)
+  "在side window ((side . bottom) (slot . 1))显示shell."
+  (interactive (list (completing-read
+                      "Select a buffer:"
+                      (-filter (lambda (x) (string-prefix-p "*shell" x))
+                               (mapcar 'buffer-name (buffer-list))))))
+  (let ((buf (get-buffer buf-name)))
+    (display-buffer-in-side-window buf '((side . bottom) (slot . 1)))
+    (switch-to-buffer-other-window buf)))
+
+(defun kj/display-side-window (buf-name)
+  (interactive (list (completing-read
+                      "Select a buffer:"
+                      (mapcar 'buffer-name (buffer-list)))))
+  (let ((buf (get-buffer buf-name)))
+    (display-buffer-in-side-window buf '((side . bottom) (slot . 1)))
+    (switch-to-buffer-other-window buf)))
+
+
+;;; Docker
+(defcustom kj/docker-buffer-name "*docker kj*"
+  "docker命令运行的buffer name."
+  :group 'kj/docker
+  :type 'string)
+
+(defcustom kj/docker-container-name "my-container"
+  "container的名字."
+  :group 'kj/docker
+  :type 'string)
+
+(defcustom kj/docker-image-name "my-image"
+  "docker image的名字."
+  :group 'kj/docker
+  :type 'string)
+
+(defun kj/docker-buf ()
+  (get-buffer-create kj/docker-buffer-name))
+
+(defun kj/docker--show-side-window ()
+  (let ((buf (kj/docker-buf)))
+    (display-buffer-in-side-window buf '((side . bottom) (slot . 1)))
+    (with-current-buffer buf
+      (goto-char (point-max))
+		  (set-window-point (get-buffer-window buf) (point-max)))))
+
+(defun kj/docker-pull (name)
+  (interactive "sNAME: ")
+  (let ((buf (kj/docker-buf)))
+    (start-process "kj/docker-pull" buf "docker" "pull" name)
+    (kj/docker--show-side-window)))
+
+(defun kj/docker-commit ()
+  (interactive)
+  (start-process "kj/docker-commit" (kj/docker-buf)
+                 "docker" "commit" kj/docker-container-name kj/docker-image-name)
+  (kj/docker--show-side-window))
+
+(defun kj/docker-run ()
+  (interactive)
+  (start-process
+   "kj/docker-run" (kj/docker-buf)
+   "docker" "run" "-d" "-it"
+   "--name" kj/docker-container-name
+   "-v" "c:/workspace:/workspace:rw"
+   "-w" "/workspace"
+   kj/docker-image-name "bash")
+  (kj/docker--show-side-window))
+
+(defun kj/docker-stop ()
+  (interactive)
+  (start-process "kj/docker-stop" (kj/docker-buf)
+                 "docker" "stop" kj/docker-container-name)
+  (kj/docker--show-side-window))
+
+(defun kj/docker-start ()
+  (interactive)
+  (start-process "kj/docker-stop" (kj/docker-buf)
+                 "docker" "start" kj/docker-container-name)
+  (kj/docker--show-side-window))
+
+
+
 (provide 'kevinj)
 
 ;;; kevinj.el ends here
